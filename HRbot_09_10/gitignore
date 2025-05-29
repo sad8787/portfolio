@@ -1,0 +1,8 @@
+/.vs
+/.idea
+/postgres
+/env
+/scripts/__pycache__
+/data/config.ini
+
+

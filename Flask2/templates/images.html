@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subir y Mostrar Imágenes</title>
+</head>
+<body>
+    <h1>Subir Imagen</h1>
+    <form id="uploadForm">
+        <input type="file" id="fileInput" name="file" required>
+        <button type="submit">Subir</button>
+    </form>
+
+    <h2>Imágenes Subidas</h2>
+    <div id="imageGallery" style="display: flex; flex-wrap: wrap; gap: 10px;"></div>
+
+    <script>
+        const uploadForm = document.getElementById('uploadForm');
+        const imageGallery = document.getElementById('imageGallery');
+
+        // Función para manejar el envío del formulario
+        uploadForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const fileInput = document.getElementById('fileInput');
+            const formData = new FormData();
+            formData.append('file', fileInput.files[0]);
+            formData.append('action', 'upload');
+            formData.append('controlador', 'images');
+
+            const response = await fetch('http://127.0.0.1:5000/sadiel/api', {
+                method: 'POST',
+                body: formData
+            });
+
+            const result = await response.json();
+            if (response.ok) {
+                alert('Imagen subida con éxito!');
+                fetchImages(); // Recargar las imágenes
+            } else {
+                alert(result.error);
+            }
+        });
+
+        // Función para obtener y mostrar las imágenes
+        async function fetchImages() {
+            const formData = new FormData();            
+            formData.append('action', 'list');
+            formData.append('controlador', 'images');
+
+            const response = await fetch('http://127.0.0.1:5000/sadiel/api',{
+                method: 'POST',
+                body: formData
+            });
+            const result_response = await response.json();
+            const images = result_response.images;
+            
+
+            imageGallery.innerHTML = ''; // Limpiar el contenedor
+            images.forEach(img => {
+                const imgElement = document.createElement('div');
+                imgElement.style.border = "1px solid #ddd";
+                imgElement.style.padding = "5px";
+                imgElement.style.textAlign = "center";
+
+                imgElement.innerHTML = `
+                    <img src="${img.path}" alt="${img.name}" style="width: 150px; height: auto; display: block; margin: 0 auto;">
+                    <p>${img.name}</p>
+                `;
+
+                imageGallery.appendChild(imgElement);
+            });
+        }
+
+        // Cargar imágenes al inicio
+        fetchImages();
+    </script>
+</body>
+</html>

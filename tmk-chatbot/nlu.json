@@ -1,0 +1,3360 @@
+{
+  "project" : {
+    "id" : "chat_bot_tmka_test-1000008-gEv",
+    "name" : "chat_bot_tmka_test-1000008-gEv",
+    "folder" : "/platform"
+  },
+  "settings" : {
+    "language" : "ru",
+    "spellingCorrection" : true,
+    "classificationAlgorithm" : "sts",
+    "timezone" : "Europe/Moscow",
+    "extendedSettings" : {
+      "useShared" : false
+    },
+    "shared" : false,
+    "validation" : {
+      "phraseValidationEnabled" : true,
+      "answerValidationEnabled" : true,
+      "phraseValidationThreshold" : 0.5,
+      "answerValidationThreshold" : 0.8
+    }
+  },
+  "intents" : [ {
+    "path" : "/bye",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "bye"
+    }, {
+      "text" : "Пока"
+    }, {
+      "text" : "До встречи"
+    }, {
+      "text" : "До свидания"
+    }, {
+      "text" : "Гуд бай"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/hello",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "hello"
+    }, {
+      "text" : "Привет"
+    }, {
+      "text" : "Здравствуйте"
+    }, {
+      "text" : "Хай"
+    }, {
+      "text" : "Как дела"
+    }, {
+      "text" : "здаров"
+    }, {
+      "text" : "приет"
+    }, {
+      "text" : "старт"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Спасибо",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "Благодарю"
+    }, {
+      "text" : "Спасибо"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Я не знаю",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "Я не знаю"
+    }, {
+      "text" : "не знаю"
+    }, {
+      "text" : "я не помню"
+    }, {
+      "text" : "не помню"
+    }, {
+      "text" : "Понятия не имею"
+    }, {
+      "text" : "забыли"
+    }, {
+      "text" : "я забыли"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/пока",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "пока"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "priority" : 0
+  }, {
+    "path" : "/привет",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "привет"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "priority" : 0
+  }, {
+    "path" : "/Operator",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "Operator"
+    }, {
+      "text" : "К Operator"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Услуга/Консультация по работе с АРМ",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "Консультация по работе с АРМ"
+    }, {
+      "text" : "с АРМ"
+    }, {
+      "text" : "АРМ"
+    }, {
+      "text" : "по работе с АРМ"
+    }, {
+      "text" : "работе с АРМ"
+    }, {
+      "text" : "Консультация АРМ"
+    }, {
+      "text" : "Консультация  с АРМ"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Услуга",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "Услуга"
+    }, {
+      "text" : "услуга"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Услуга/Профилактика и техническое обслуживание ПК",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "Профилактика и техническое обслуживание ПК"
+    }, {
+      "text" : "техническое обслуживание ПК"
+    }, {
+      "text" : "обслуживание ПК"
+    }, {
+      "text" : " ПК"
+    }, {
+      "text" : "техническое ПК"
+    }, {
+      "text" : "Профилактика ПК"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Услуга/Работа с данными 1С",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "Работа с данными 1С"
+    }, {
+      "text" : "Работа с 1С"
+    }, {
+      "text" : "Работа 1С"
+    }, {
+      "text" : "1С"
+    }, {
+      "text" : "1 с"
+    }, {
+      "text" : "с данными 1С"
+    }, {
+      "text" : "данные 1с"
+    }, {
+      "text" : "данные 1 с"
+    }, {
+      "text" : "данные"
+    }, {
+      "text" : "Работа 1 С"
+    }, {
+      "text" : "Работа с 1 С"
+    }, {
+      "text" : "Работа с данными 1 С"
+    }, {
+      "text" : "с данными 1 С"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Услуга/Корпоративный портал",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "Корпоративный портал"
+    }, {
+      "text" : "портал"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Заявка/Заявка в Service Desk/Программное обеспечение",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "Программное обеспечение"
+    }, {
+      "text" : "Программное"
+    }, {
+      "text" : "программное обеспечение"
+    }, {
+      "text" : "ПО"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Заявка/Заявка в Service Desk/Доступы",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "Доступы"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Заявка/Заявка в Service Desk/Иная Категория",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "Иная Категория"
+    }, {
+      "text" : "Иная категория"
+    }, {
+      "text" : "Иная"
+    }, {
+      "text" : "другое"
+    }, {
+      "text" : "другая проблема"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Заявка/Заявка в Service Desk",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "Заявка в Service Desk"
+    }, {
+      "text" : "Service Desk"
+    }, {
+      "text" : "service desk"
+    }, {
+      "text" : "Desk"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Заявка/Заявка в Service Desk/Проводные и беспроводные сети",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "Проводные и беспроводные сети"
+    }, {
+      "text" : "Проводные и беспроводные"
+    }, {
+      "text" : "сети"
+    }, {
+      "text" : "wifi"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Заявка/Заявка в Service Desk/компьютеры, оборудование и периферия",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "компьютеры, оборудование периферия"
+    }, {
+      "text" : "компьютеры"
+    }, {
+      "text" : "оборудование"
+    }, {
+      "text" : "периферия"
+    }, {
+      "text" : "оборудование периферия"
+    }, {
+      "text" : "компьютеры, оборудование и периферия"
+    }, {
+      "text" : "оборудование и периферия"
+    }, {
+      "text" : "компьютеры и периферия"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Заявка/Заявка на транспорт",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "Заявка на транспорт"
+    }, {
+      "text" : "Заявка транспорт"
+    }, {
+      "text" : "транспорт"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Заявка/заявка на самовыдвижение",
+    "answer" : "Подать заявку на самовыдвижение в управленческий резерв Группы ТМК и ознакомиться с более подробной информацией Вы можете по ссылке: \n",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "Самовыдвижение"
+    }, {
+      "text" : "Карьерный рост "
+    }, {
+      "text" : "Кадровый резерв"
+    }, {
+      "text" : "Сервис самовыдвижения"
+    }, {
+      "text" : "Заявка на самовыдвижение"
+    }, {
+      "text" : "Должности с резерва"
+    }, {
+      "text" : "Возможные должности"
+    }, {
+      "text" : "Возможности карьеры"
+    }, {
+      "text" : "Управленческий резерв"
+    }, {
+      "text" : "Система резервов"
+    }, {
+      "text" : "Рост в компании"
+    }, {
+      "text" : "Карьерный рост в компании"
+    }, {
+      "text" : "Карьерный рост в ТМК"
+    }, {
+      "text" : "Рост в ТМК"
+    }, {
+      "text" : "Подать заявку на самовыдвижение"
+    }, {
+      "text" : "Подать заявку в управленческий резерв"
+    }, {
+      "text" : "Отправить заявку на самовыдвижение"
+    }, {
+      "text" : "Отправить заявку в управленческий резерв"
+    }, {
+      "text" : "Как подать заявку на самовыдвижение?"
+    }, {
+      "text" : "Как подать заявку в управленческий резерв?"
+    }, {
+      "text" : "Что нужно сделать, чтобы попасть в резерв?"
+    }, {
+      "text" : "Что нужно сделать, чтобы попасть в управленческий резерв?"
+    }, {
+      "text" : "Как попасть в управленческий резерв?"
+    }, {
+      "text" : "Кто может подать заявку в управленческий резерв? "
+    }, {
+      "text" : "Кто может подать заявку на самовыдвижение?"
+    }, {
+      "text" : "Я могу подать заявку в управленческий резерв?"
+    }, {
+      "text" : "Я могу подать заявку на самовыдвижение?"
+    }, {
+      "text" : "Должности для управленческого резерва"
+    }, {
+      "text" : "Должности для самовыдвижения"
+    }, {
+      "text" : "Как продвинуться в компании?"
+    }, {
+      "text" : "Как повысить должность в компании?"
+    }, {
+      "text" : "Хочу повысить должность"
+    }, {
+      "text" : "Хочу получить повышение"
+    }, {
+      "text" : "Хочу на управляющую должность"
+    }, {
+      "text" : "Как попасть на управляющую должность?"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Комплаенс этика и закон/Этика Закон",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "Этика Закон"
+    }, {
+      "text" : "Этика"
+    }, {
+      "text" : "Закон"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Комплаенс этика и закон/Горячая линия",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "Горячая"
+    }, {
+      "text" : "Линия"
+    }, {
+      "text" : "Горячей линии"
+    }, {
+      "text" : "Как обратиться"
+    }, {
+      "text" : "Позвонить"
+    }, {
+      "text" : "Телефон"
+    }, {
+      "text" : "Горячая линия ТМК"
+    }, {
+      "text" : "Заявить о нарушении"
+    }, {
+      "text" : "Заявить на горячую линию"
+    }, {
+      "text" : "Подать обращение на горячую линию"
+    }, {
+      "text" : "Сообщить о противоправном действии"
+    }, {
+      "text" : "Сообщить о нарушении"
+    }, {
+      "text" : "Сообщить на горячую линию"
+    }, {
+      "text" : "Как воспользоваться горячей линией?"
+    }, {
+      "text" : "Как сообщить о правонарушении?"
+    }, {
+      "text" : "Как сообщить о нарушении?"
+    }, {
+      "text" : "Хочу написать на горячую линию"
+    }, {
+      "text" : "Хочу заявить о правонарушении"
+    }, {
+      "text" : "Правонарушение"
+    }, {
+      "text" : "Хочу заявить о нарушении"
+    }, {
+      "text" : "Телефон доверия"
+    }, {
+      "text" : "Комитету по регулированию комплаенс-рисков"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Комплаенс этика и закон/Охрана труда",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "Охрана труда"
+    }, {
+      "text" : "труда"
+    }, {
+      "text" : "Труда"
+    }, {
+      "text" : "Охрана"
+    }, {
+      "text" : "охрана"
+    }, {
+      "text" : "безопасность работников"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Комплаенс этика и закон/Этика Закон/Злоупотребление полномочиями",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "Злоупотребление полномочиями"
+    }, {
+      "text" : "Злоупотребление"
+    }, {
+      "text" : "полномочиями"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Комплаенс этика и закон/Этика Закон/Использование имущества Компании",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "Использование имущества Компании"
+    }, {
+      "text" : "имущества Компании"
+    }, {
+      "text" : "Имущества"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Комплаенс этика и закон/Охрана труда/Вам следует",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Комплаенс этика и закон/Социальная поддержка/Обучение",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "Обучение"
+    }, {
+      "text" : "учеба"
+    }, {
+      "text" : "учиться"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Комплаенс этика и закон/Социальная поддержка/Медицина",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "Медицина"
+    }, {
+      "text" : "врач"
+    }, {
+      "text" : "Полис"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Комплаенс этика и закон/Этика Закон/Взятка и Коррупция/Что такое взятка?",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "Что такое взятка?"
+    }, {
+      "text" : "взятка?"
+    }, {
+      "text" : "Взятка?"
+    }, {
+      "text" : "взяточничество"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Комплаенс этика и закон/Этика Закон/Взятка и Коррупция/Взятка или подарок?",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "Взятка или подарок?"
+    }, {
+      "text" : "Взятка или подарок"
+    }, {
+      "text" : "подарок"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Комплаенс этика и закон/Этика Закон/Использование имущества Компании/Что такое хищение?",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "Что такое хищение?"
+    }, {
+      "text" : "Что такое хищение"
+    }, {
+      "text" : "хищение?"
+    }, {
+      "text" : "хищение собственности компании"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Комплаенс этика и закон/Этика Закон/Использование имущества Компании/Вам следует",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Комплаенс этика и закон/Этика Закон/Использование имущества Компании/Вам не следует",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Комплаенс этика и закон/Этика Закон/Использование имущества Компании/Ответственность за нарушения",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "Ответственность за нарушения"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Комплаенс этика и закон/Социальная поддержка/Обучение/Информация об обучении",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "Информация об обучении"
+    }, {
+      "text" : "об обучении"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Комплаенс этика и закон/Социальная поддержка/Медицина/Информация о медицине",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "Информация о медицине"
+    }, {
+      "text" : "о медицине"
+    }, {
+      "text" : "больница"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Комплаенс этика и закон/Социальная поддержка/Медицина/Предварительный медицинский осмотр",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "Предварительный медицинский осмотр"
+    }, {
+      "text" : "предварительный медицинский"
+    }, {
+      "text" : "осмотр при поступлении на работу"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Комплаенс этика и закон/Социальная поддержка/Медицина/Периодический медицинский осмотр (профосмотр)",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "Периодический медицинский осмотр (профосмотр)"
+    }, {
+      "text" : "Периодический медицинский осмотр профосмотр"
+    }, {
+      "text" : "профосмотр"
+    }, {
+      "text" : "Периодический медицинский осмотр"
+    }, {
+      "text" : "состояние здоровья работника"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Комплаенс этика и закон/Социальная поддержка/Медицина/Полис ОМС",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "Полис ОМС"
+    }, {
+      "text" : "ОМС"
+    }, {
+      "text" : "обязательное медицинское страхование"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Комплаенс этика и закон/Социальная поддержка/Обучение/Цифровые помощники/SOTA2U",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "SOTA2U"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Комплаенс этика и закон/Социальная поддержка/Обучение/Цифровые помощники/MOBI2U",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "MOBI2U"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Комплаенс этика и закон/Социальная поддержка/Обучение/Развивающие проекты/Горизонты",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "Горизонты"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Вот что я умею",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "Вот что я умею"
+    }, {
+      "text" : "что я умею"
+    }, {
+      "text" : "Что я умею"
+    }, {
+      "text" : "главное меню"
+    }, {
+      "text" : "Главное меню"
+    }, {
+      "text" : "Главное"
+    }, {
+      "text" : "На главную"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Да",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "да"
+    }, {
+      "text" : "yes"
+    }, {
+      "text" : "ok"
+    }, {
+      "text" : "ок"
+    }, {
+      "text" : "Ок"
+    }, {
+      "text" : "Да"
+    }, {
+      "text" : "Ok"
+    }, {
+      "text" : "Yes"
+    }, {
+      "text" : "Si"
+    }, {
+      "text" : "si"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Комплаенс этика и закон",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Комплаенс этика и закон/Социальная поддержка",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "Социальная поддержка"
+    }, {
+      "text" : "Социальная"
+    }, {
+      "text" : "поддержка"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Комплаенс этика и закон/Этика Закон/Взятка и Коррупция",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "Взятка Коррупция"
+    }, {
+      "text" : "Взятка"
+    }, {
+      "text" : "Коррупция"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Комплаенс этика и закон/Охрана труда/Что такое охрана труда?",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "Что такое охрана труда?"
+    }, {
+      "text" : "Что такое охрана труда"
+    }, {
+      "text" : "охрана труда это"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Комплаенс этика и закон/Охрана труда/Вам не следует",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Комплаенс этика и закон/Охрана труда/Ответственность за нарушения",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "Ответственность за нарушения"
+    }, {
+      "text" : "Ответственность"
+    }, {
+      "text" : "нарушения"
+    }, {
+      "text" : "нарушения требований охраны труда"
+    }, {
+      "text" : "нарушения трудовой дисциплины"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Комплаенс этика и закон/Социальная поддержка/Медицина/Полис ДМС",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "Полис ДМС"
+    }, {
+      "text" : "ДМС"
+    }, {
+      "text" : "добровольное медицинское страхование"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Комплаенс этика и закон/Социальная поддержка/Медицина/Программа профилактики сердечно-сосудистых заболеваний и связанных с ними осложнений на промышленных предприятиях Группы ТМК",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "Программа профилактики сердечно-сосудистых заболеваний и связанных с ними осложнений на промышленных предприятиях Группы ТМК"
+    }, {
+      "text" : "профилактика"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Комплаенс этика и закон/Социальная поддержка/Обучение/Цифровые помощники",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "Цифровые помощники"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Комплаенс этика и закон/Социальная поддержка/Обучение/Развивающие проекты",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "Развивающие проекты"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Комплаенс этика и закон/Социальная поддержка/Обучение/Развивающие проекты/Игры мастеров",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "Игры мастеров"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Комплаенс этика и закон/Социальная поддержка/Обучение/Развивающие проекты/Open2U",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "Open2U"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Нет",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "Не"
+    }, {
+      "text" : "нет"
+    }, {
+      "text" : "неа"
+    }, {
+      "text" : "no"
+    }, {
+      "text" : "не"
+    }, {
+      "text" : "Нет"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Заявка",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "Заявка"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Заявка/Заявка на канцтовары",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "Заявка на канцтовары"
+    }, {
+      "text" : "на канцтовары"
+    }, {
+      "text" : "канцтовары"
+    }, {
+      "text" : "канцелярия"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Назад",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "назад"
+    }, {
+      "text" : "Назад"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Срочность/Срочная",
+    "answer" : "Заявка срочная",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "срочный"
+    }, {
+      "text" : "Срочный "
+    }, {
+      "text" : "срочная"
+    }, {
+      "text" : "Срочная"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Срочность/Обычная",
+    "answer" : "Заявка обычная",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "Обычная"
+    }, {
+      "text" : "обычная"
+    }, {
+      "text" : "Обычный"
+    }, {
+      "text" : "обычный"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Срочность",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Срочность/He срочная",
+    "answer" : "Заявка не срочная",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "He срочный"
+    }, {
+      "text" : "Не срочная"
+    }, {
+      "text" : "не срочная"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Далее",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "Далее"
+    }, {
+      "text" : "Продолжить"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Отправить",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "Отправить"
+    }, {
+      "text" : "send"
+    }, {
+      "text" : "отправлять"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Отменить",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "Отменить"
+    }, {
+      "text" : "Отмена"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Companies",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "slots" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Companies/VTZ",
+    "answer" : "«ВТЗ»",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "Волжский трубный завод"
+    }, {
+      "text" : "ВТЗ"
+    }, {
+      "text" : "Волга"
+    }, {
+      "text" : "Волжский завод"
+    }, {
+      "text" : "Волжский "
+    }, {
+      "text" : "Волжский трубный"
+    }, {
+      "text" : "«ВТЗ»"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Companies/SinTZ",
+    "answer" : "«СинТЗ»",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "Синарский трубный завод"
+    }, {
+      "text" : "СинТЗ"
+    }, {
+      "text" : "Синара"
+    }, {
+      "text" : "Синарский трубный"
+    }, {
+      "text" : "Синарский"
+    }, {
+      "text" : "Синарский завод"
+    }, {
+      "text" : "«СинТЗ»"
+    }, {
+      "text" : "синтез"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Companies/TMK",
+    "answer" : "«ТМК»",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "Трубная металлургическая компания"
+    }, {
+      "text" : "ТМК"
+    }, {
+      "text" : "TMK"
+    }, {
+      "text" : "«ТМК»"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Companies/CHTPZ",
+    "answer" : "«ЧТПЗ»",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "Челябинский Трубопрокатный завод"
+    }, {
+      "text" : "ЧТПЗ"
+    }, {
+      "text" : "Челябинский"
+    }, {
+      "text" : "Челябинский завод"
+    }, {
+      "text" : "Челябинский Трубопрокатный"
+    }, {
+      "text" : "«ЧТПЗ»"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Companies/PNTZ",
+    "answer" : "«ПНТЗ»",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "ПНТЗ"
+    }, {
+      "text" : "Первоуральский Новотрубный завод"
+    }, {
+      "text" : "Первоуральский Новотрубный"
+    }, {
+      "text" : "Первоуральский завод"
+    }, {
+      "text" : "Первоуральский"
+    }, {
+      "text" : "«ПНТЗ»"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Companies/OMZ",
+    "answer" : "«ОМЗ»",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "ОМЗ"
+    }, {
+      "text" : "Орский машиностроительный завод"
+    }, {
+      "text" : "Орский"
+    }, {
+      "text" : "Орский машиностроительный"
+    }, {
+      "text" : "Орский завод"
+    }, {
+      "text" : "«ОМЗ»"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Companies/STZ",
+    "answer" : "«СТЗ»",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "Северский трубный завод"
+    }, {
+      "text" : "СТЗ"
+    }, {
+      "text" : "Северка"
+    }, {
+      "text" : "Северский"
+    }, {
+      "text" : "Северский трубный"
+    }, {
+      "text" : "Северский завод"
+    }, {
+      "text" : "«СТЗ»"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Companies/Tagmet",
+    "answer" : "«Тагмет»",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "Таганрогский металлургический завод"
+    }, {
+      "text" : "Тагмет"
+    }, {
+      "text" : "Таганрогский завод"
+    }, {
+      "text" : "Таганрогский металлургический"
+    }, {
+      "text" : "Таганрогский"
+    }, {
+      "text" : "«Тагмет»"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Companies/INOKS",
+    "answer" : "«ТМК-ИНОКС»",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "ТМК-ИНОКС"
+    }, {
+      "text" : "ИНОКС"
+    }, {
+      "text" : "ТМК ИНОКС"
+    }, {
+      "text" : "«ТМК-ИНОКС»"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Обратная связь",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "обратная связь"
+    }, {
+      "text" : "Обратная связь"
+    }, {
+      "text" : "предложить сценарий"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Кафе Москва",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "Кафе Москва"
+    }, {
+      "text" : "Кофейня Москва"
+    }, {
+      "text" : "Кофейня Москва?"
+    }, {
+      "text" : "Кафетерий Москва"
+    }, {
+      "text" : "Кафетерий Москва?"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Кафе Москва/Работа кафетерия",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "Работа кафетерия"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Кафе Москва/Работа кафетерия/Время работы кафетерия",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "Работа кафетерия"
+    }, {
+      "text" : "Работа кафетерия?"
+    }, {
+      "text" : "Время работы кафе"
+    }, {
+      "text" : "Время работы кафе?"
+    }, {
+      "text" : "Время работы кафетерия?"
+    }, {
+      "text" : "Время работы кафетерия"
+    }, {
+      "text" : "Когда работает кафе"
+    }, {
+      "text" : "Когда работает кафе?"
+    }, {
+      "text" : "Когда открывается кафе"
+    }, {
+      "text" : "Когда открывается кафе?"
+    }, {
+      "text" : "Когда закрывается кафе"
+    }, {
+      "text" : "Когда закрывается кафе?"
+    }, {
+      "text" : "Выпить кофе"
+    }, {
+      "text" : "Выпить кофе?"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Кафе Москва/Работа кафетерия/завтрак",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "завтрак"
+    }, {
+      "text" : "завтрак?"
+    }, {
+      "text" : "До скольких завтрак?"
+    }, {
+      "text" : "До скольких завтрак"
+    }, {
+      "text" : "Во сколько начинается завтрак?"
+    }, {
+      "text" : "Во сколько начинается завтрак"
+    }, {
+      "text" : "Во сколько заканчивается завтрак?"
+    }, {
+      "text" : "Во сколько заканчивается завтрак"
+    }, {
+      "text" : "Когда можно позавтракать?"
+    }, {
+      "text" : "Когда можно позавтракать"
+    }, {
+      "text" : "позавтракать?"
+    }, {
+      "text" : "позавтракать"
+    }, {
+      "text" : "Когда завтрак?"
+    }, {
+      "text" : "Когда завтрак"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Кафе Москва/Обратная связь по работе кафе",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "Обратная связь по работе кафе"
+    }, {
+      "text" : "Обратная связь по работе столовой"
+    }, {
+      "text" : "Обратная связь по работе столовой?"
+    }, {
+      "text" : "Вопрос по работе кафе"
+    }, {
+      "text" : "Вопрос по работе кафе?"
+    }, {
+      "text" : "Вопрос по работе столовой"
+    }, {
+      "text" : "Вопрос по работе столовой?"
+    }, {
+      "text" : "Предложение по работе кафе"
+    }, {
+      "text" : "Предложение по работе кафе?"
+    }, {
+      "text" : "Предложение по работе столовой"
+    }, {
+      "text" : "Предложение по работе столовой?"
+    }, {
+      "text" : "Вопрос по меню"
+    }, {
+      "text" : "Вопрос по меню?"
+    }, {
+      "text" : "Вопрос по калорийности блюд"
+    }, {
+      "text" : "Вопрос по калорийности блюд?"
+    }, {
+      "text" : "Вопрос по расписанию работы кафе?"
+    }, {
+      "text" : "Вопрос по расписанию работы кафе"
+    }, {
+      "text" : "Вопрос по очереди в кафе"
+    }, {
+      "text" : "Вопрос по очереди в кафе?"
+    }, {
+      "text" : "Предложение по меню"
+    }, {
+      "text" : "Предложение по меню?"
+    }, {
+      "text" : "Ошибка в меню"
+    }, {
+      "text" : "Ошибка в меню?"
+    }, {
+      "text" : "Ошибка в расчете калорий"
+    }, {
+      "text" : "Ошибка в расчете калорий?"
+    }, {
+      "text" : "Ошибка в работе калькулятора"
+    }, {
+      "text" : "Ошибка в работе калькулятора?"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Кафе Москва/Калории",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "Калории"
+    }, {
+      "text" : "Калории?"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Кафе Москва/Калории/Калькулятор калорий",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "Калькулятор калорий"
+    }, {
+      "text" : "Калькулятор калорий?"
+    }, {
+      "text" : "Калькулятор калорий!"
+    }, {
+      "text" : "Посчитать калории"
+    }, {
+      "text" : "Посчитать калории?"
+    }, {
+      "text" : "Калорийность завтрака"
+    }, {
+      "text" : "Калорийность завтрака?"
+    }, {
+      "text" : "Калорийность обеда?"
+    }, {
+      "text" : "Калорийность блюд"
+    }, {
+      "text" : "Калорийность блюд?"
+    }, {
+      "text" : "Калорийность блюда"
+    }, {
+      "text" : "Калорийность блюда?"
+    }, {
+      "text" : "Калорийность еды"
+    }, {
+      "text" : "Калорийность еды?"
+    }, {
+      "text" : "Калорийность"
+    }, {
+      "text" : "Калорийность?"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Кафе Москва/Работа кафетерия/Обед",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "Обед"
+    }, {
+      "text" : "Обед?"
+    }, {
+      "text" : "До скольких обед?"
+    }, {
+      "text" : "До скольких обед"
+    }, {
+      "text" : "Во сколько начинается обед?"
+    }, {
+      "text" : "Во сколько начинается обед"
+    }, {
+      "text" : "Во сколько заканчивается обед?"
+    }, {
+      "text" : "Во сколько заканчивается обед"
+    }, {
+      "text" : "Когда можно пообедать?"
+    }, {
+      "text" : "Когда можно пообедать"
+    }, {
+      "text" : "Когда обед?"
+    }, {
+      "text" : "Когда обед"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Кафе Москва/Акция на бесплатный кофе",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "Акция на бесплатный кофе"
+    }, {
+      "text" : "Акция на бесплатный кофе?"
+    }, {
+      "text" : "Кофе по акции"
+    }, {
+      "text" : "Кофе по акции!"
+    }, {
+      "text" : "Кофе по акции?"
+    }, {
+      "text" : "Бесплатный кофе"
+    }, {
+      "text" : "Бесплатный кофе?"
+    }, {
+      "text" : "Бесплатный кофе!"
+    }, {
+      "text" : "Кофе по понедельникам"
+    }, {
+      "text" : "Кофе по понедельникам?"
+    }, {
+      "text" : "Кофе по пятницам"
+    }, {
+      "text" : "Кофе по пятницам?"
+    }, {
+      "text" : "Кофе по пятницам!"
+    }, {
+      "text" : "Бесплатный кофе по понедельникам"
+    }, {
+      "text" : "Бесплатный кофе по понедельникам?"
+    }, {
+      "text" : "Бесплатный кофе по понедельникам!"
+    }, {
+      "text" : "Бесплатный кофе в понедельник"
+    }, {
+      "text" : "Бесплатный кофе в понедельник?"
+    }, {
+      "text" : "Бесплатный кофе в понедельник!"
+    }, {
+      "text" : "Бесплатный кофе по пятницам"
+    }, {
+      "text" : "Бесплатный кофе по пятницам?"
+    }, {
+      "text" : "Бесплатный кофе по пятницам!"
+    }, {
+      "text" : "Бесплатный кофе в пятницу"
+    }, {
+      "text" : "Бесплатный кофе в пятницу?"
+    }, {
+      "text" : "Бесплатный кофе в пятницу!"
+    }, {
+      "text" : "Акция бесплатный кофе"
+    }, {
+      "text" : "Акция бесплатный кофе?"
+    }, {
+      "text" : "Акция бесплатный кофе!"
+    }, {
+      "text" : "ТМК угощает"
+    }, {
+      "text" : "Кофе в подарок"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Кафе Москва/Калории/Норма калорий",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "Норма калорий"
+    }, {
+      "text" : "Норма калорий?"
+    }, {
+      "text" : "Норма калорий в день"
+    }, {
+      "text" : "Норма калорий в день?"
+    }, {
+      "text" : "Суточная норма калорий"
+    }, {
+      "text" : "Суточная норма калорий?"
+    }, {
+      "text" : "Калорийность в сутки"
+    }, {
+      "text" : "Калорийность в сутки?"
+    }, {
+      "text" : "Количество калорий в день?"
+    }, {
+      "text" : "Количество калорий в день"
+    }, {
+      "text" : "Моя норма калорий"
+    }, {
+      "text" : "Моя норма калорий?"
+    }, {
+      "text" : "Какая у меня норма калорий"
+    }, {
+      "text" : "Какая у меня норма калорий?"
+    }, {
+      "text" : "Сколько калорий мне нужно"
+    }, {
+      "text" : "Сколько калорий мне нужно?"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Кафе Москва/Меню в кафе",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "Меню в кафе"
+    }, {
+      "text" : "Меню в кафе?"
+    }, {
+      "text" : "Меню на сегодня?"
+    }, {
+      "text" : "Меню на сегодня"
+    }, {
+      "text" : "Меню в столовой"
+    }, {
+      "text" : "Меню в столовой?"
+    }, {
+      "text" : "Меню на обед"
+    }, {
+      "text" : "Меню на обед?"
+    }, {
+      "text" : "Меню на завтрак?"
+    }, {
+      "text" : "Меню на завтрак"
+    }, {
+      "text" : "Какое меню на завтрак?"
+    }, {
+      "text" : "Какое меню на завтрак"
+    }, {
+      "text" : "Какой сегодня завтрак?"
+    }, {
+      "text" : "Какой сегодня завтрак"
+    }, {
+      "text" : "Что сегодня на завтрак?"
+    }, {
+      "text" : "Что сегодня на завтрак"
+    }, {
+      "text" : "Что на завтрак?"
+    }, {
+      "text" : "Что на завтрак"
+    }, {
+      "text" : "Какое меню на обед"
+    }, {
+      "text" : "Какое меню на обед?"
+    }, {
+      "text" : "Какой сегодня обед?"
+    }, {
+      "text" : "Какой сегодня обед"
+    }, {
+      "text" : "Что сегодня на обед?"
+    }, {
+      "text" : "Что сегодня на обед"
+    }, {
+      "text" : "Что на обед?"
+    }, {
+      "text" : "Что на обед"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Выход",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "Выход"
+    }, {
+      "text" : "Конец"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/ChatGPT",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "ChatGPT"
+    }, {
+      "text" : "GPT"
+    }, {
+      "text" : "OpenAI"
+    }, {
+      "text" : "GTP"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Кофе",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "Кофе"
+    }, {
+      "text" : "Меню"
+    }, {
+      "text" : "Заказ"
+    }, {
+      "text" : "Официант"
+    }, {
+      "text" : "Обслуживание"
+    }, {
+      "text" : "Столик"
+    }, {
+      "text" : "Посуда"
+    }, {
+      "text" : "Салат"
+    }, {
+      "text" : "Суп"
+    }, {
+      "text" : "Основное блюдо"
+    }, {
+      "text" : "Закуска"
+    }, {
+      "text" : "Десерт"
+    }, {
+      "text" : "Напиток"
+    }, {
+      "text" : "Кафе"
+    }, {
+      "text" : "Кафе?"
+    }, {
+      "text" : "Кофе?"
+    }, {
+      "text" : "Чай"
+    }, {
+      "text" : "Сок"
+    }, {
+      "text" : "Вода"
+    }, {
+      "text" : "Булочка"
+    }, {
+      "text" : "Хлеб"
+    }, {
+      "text" : "Масло"
+    }, {
+      "text" : "Сыр"
+    }, {
+      "text" : "Колбаса"
+    }, {
+      "text" : "Гамбургер"
+    }, {
+      "text" : "Пицца"
+    }, {
+      "text" : "Роллы"
+    }, {
+      "text" : "Лапша"
+    }, {
+      "text" : "Рис"
+    }, {
+      "text" : "Удон"
+    }, {
+      "text" : "Рамен"
+    }, {
+      "text" : "Карри"
+    }, {
+      "text" : "Паста"
+    }, {
+      "text" : "Суши"
+    }, {
+      "text" : "Макароны"
+    }, {
+      "text" : "Пельмени"
+    }, {
+      "text" : "Котлета"
+    }, {
+      "text" : "Вареники"
+    }, {
+      "text" : "Шашлык"
+    }, {
+      "text" : "Мясо"
+    }, {
+      "text" : "Рыба"
+    }, {
+      "text" : "Продолжи"
+    }, {
+      "text" : "Курица"
+    }, {
+      "text" : "Гарнир"
+    }, {
+      "text" : "Морковь"
+    }, {
+      "text" : "Гриль"
+    }, {
+      "text" : "Картошка"
+    }, {
+      "text" : "Свекла"
+    }, {
+      "text" : "Капуста"
+    }, {
+      "text" : "Томат"
+    }, {
+      "text" : "Лук"
+    }, {
+      "text" : "Чеснок"
+    }, {
+      "text" : "Баклажан"
+    }, {
+      "text" : "Помидор"
+    }, {
+      "text" : "Соус"
+    }, {
+      "text" : "Майонез"
+    }, {
+      "text" : "Кетчуп"
+    }, {
+      "text" : "Горчица"
+    }, {
+      "text" : "Специи"
+    }, {
+      "text" : "Приправы"
+    }, {
+      "text" : "Пряности"
+    }, {
+      "text" : "Травы"
+    }, {
+      "text" : "Базилик"
+    }, {
+      "text" : "Орегано"
+    }, {
+      "text" : "Тмин"
+    }, {
+      "text" : "Корица"
+    }, {
+      "text" : "Ваниль"
+    }, {
+      "text" : "Шоколад"
+    }, {
+      "text" : "Мороженое"
+    }, {
+      "text" : "Торт"
+    }, {
+      "text" : "Пирожное"
+    }, {
+      "text" : "Эклер"
+    }, {
+      "text" : "Бисквит"
+    }, {
+      "text" : "Круассан"
+    }, {
+      "text" : "Джем"
+    }, {
+      "text" : "Мармелад"
+    }, {
+      "text" : "Желе"
+    }, {
+      "text" : "Компот"
+    }, {
+      "text" : "Кисель"
+    }, {
+      "text" : "Морс"
+    }, {
+      "text" : "Лимонад"
+    }, {
+      "text" : "Смузи"
+    }, {
+      "text" : "Фруктовый салат"
+    }, {
+      "text" : "Молочный коктейль"
+    }, {
+      "text" : "Апельсиновый сок"
+    }, {
+      "text" : "Ананасовый сок"
+    }, {
+      "text" : "Томатный сок"
+    }, {
+      "text" : "Минеральная вода"
+    }, {
+      "text" : "Газировка"
+    }, {
+      "text" : "Безалкогольный коктейль"
+    }, {
+      "text" : "Алкогольный коктейль"
+    }, {
+      "text" : "Глинтвейн"
+    }, {
+      "text" : "Пунш"
+    }, {
+      "text" : "Какао"
+    }, {
+      "text" : "Горячий шоколад"
+    }, {
+      "text" : "Травяной чай"
+    }, {
+      "text" : "Зеленый чай"
+    }, {
+      "text" : "Черный чай"
+    }, {
+      "text" : "Чашечка кофе"
+    }, {
+      "text" : "Бокал вина"
+    }, {
+      "text" : "Столовая посуда"
+    }, {
+      "text" : "Фарфоровая посуда"
+    }, {
+      "text" : "Стеклянная посуда"
+    }, {
+      "text" : "Металлическая посуда"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Удалить историю",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "удалить историю"
+    }, {
+      "text" : "удалить"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Запрос",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Заказ/Заказ корпоративного транспорта/Когда я могу заказать такси?",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "Когда я могу заказать такси?"
+    }, {
+      "text" : "Время подачи заявки на такси"
+    }, {
+      "text" : "Когда я могу подать заявку на такси?"
+    }, {
+      "text" : "За сколько нужно подать заявку на такси?"
+    }, {
+      "text" : "Оптимальное время заказа такси"
+    }, {
+      "text" : "В какое время нужно заказать такси?"
+    }, {
+      "text" : "Время подачи заявки на трансфер"
+    }, {
+      "text" : "Когда я могу заказать трансфер?"
+    }, {
+      "text" : "Когда я могу подать заявку на трансфер?"
+    }, {
+      "text" : "За сколько нужно подать заявку на трансфер?"
+    }, {
+      "text" : "Оптимальное время заказа трансфера"
+    }, {
+      "text" : "В какое время нужно заказать трансфер?"
+    }, {
+      "text" : "Время подачи заявки на машину"
+    }, {
+      "text" : "Когда я могу заказать машину?"
+    }, {
+      "text" : "Когда я могу подать заявку на машину?"
+    }, {
+      "text" : "За сколько нужно подать заявку на машину?"
+    }, {
+      "text" : "Оптимальное время заказа машины"
+    }, {
+      "text" : "В какое время нужно заказать машину?"
+    }, {
+      "text" : "Какие правила для заказа такси?"
+    }, {
+      "text" : "Какие правила для оформления заявки на такси?"
+    }, {
+      "text" : "Какие правила для заказа машины?"
+    }, {
+      "text" : "Какие правила для оформления заявки на машину?"
+    }, {
+      "text" : "Какие правила для заказа трансфера?"
+    }, {
+      "text" : "Какие правила для оформления заявки на трансфер?"
+    }, {
+      "text" : "Такси сроки"
+    }, {
+      "text" : "Трансфер сроки"
+    }, {
+      "text" : "Машина сроки"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Заказ/Заказ корпоративного транспорта/Транспорт",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "Транспорт"
+    }, {
+      "text" : "Заказ корпоративного транспорта"
+    }, {
+      "text" : "Автотранспорт"
+    }, {
+      "text" : "Трансфер"
+    }, {
+      "text" : "Заказ такси"
+    }, {
+      "text" : "Заказ транспорта"
+    }, {
+      "text" : "Заказ автомобиля"
+    }, {
+      "text" : "Заказ машины"
+    }, {
+      "text" : "Заказ трансфера"
+    }, {
+      "text" : "Такси в аэропорт"
+    }, {
+      "text" : "Такси из аэропорта"
+    }, {
+      "text" : "Машина в аэропорт"
+    }, {
+      "text" : "Машина из аэропорта"
+    }, {
+      "text" : "Трансфер в аэропорт"
+    }, {
+      "text" : "Трансфер из аэропорта"
+    }, {
+      "text" : "Транспорт в аэропорт"
+    }, {
+      "text" : "Транспорт из аэропорта"
+    }, {
+      "text" : "Заказать машину"
+    }, {
+      "text" : "Заказать такси"
+    }, {
+      "text" : "Заказать трансфер"
+    }, {
+      "text" : "Заказать автотранспорт"
+    }, {
+      "text" : "Как заказать такси?"
+    }, {
+      "text" : "Как заказать автотранспорт?"
+    }, {
+      "text" : "Как заказать трансфер?"
+    }, {
+      "text" : "Как заказать машину?"
+    }, {
+      "text" : "Такси в командировке"
+    }, {
+      "text" : "Такси после 22:00"
+    }, {
+      "text" : "Такси на деловую встречу"
+    }, {
+      "text" : "Машина в командировке"
+    }, {
+      "text" : "Машина после 22:00"
+    }, {
+      "text" : "Машина на деловую встречу"
+    }, {
+      "text" : "Трансфер в командировке"
+    }, {
+      "text" : "Трансфер после 22:00"
+    }, {
+      "text" : "Трансфер на деловую встречу"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Заказ/Заказ корпоративного транспорта/Как заказать такси на выходные?",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "Как заказать такси на выходные?"
+    }, {
+      "text" : "Как заказать машину на выходные?"
+    }, {
+      "text" : "Как заказать трансфер на выходные?"
+    }, {
+      "text" : "Как вызвать такси на выходные?"
+    }, {
+      "text" : "Как вызвать машину на выходные?"
+    }, {
+      "text" : "Как вызвать трансфер на выходные?"
+    }, {
+      "text" : "Когда заказать такси на выходные?"
+    }, {
+      "text" : "Когда заказать машину на выходные?"
+    }, {
+      "text" : "Когда заказать трансфер на выходные?"
+    }, {
+      "text" : "Время заказа такси на выходные?"
+    }, {
+      "text" : "Время заказа машины на выходные"
+    }, {
+      "text" : "Время заказа трансфера на выходные"
+    }, {
+      "text" : "Такси в выходные"
+    }, {
+      "text" : "Такси на выходные"
+    }, {
+      "text" : "Машина в выходные"
+    }, {
+      "text" : "Машина на выходные"
+    }, {
+      "text" : "Трансфер в выходные"
+    }, {
+      "text" : "Трансфер на выходные"
+    }, {
+      "text" : "Заказ такси на выходные"
+    }, {
+      "text" : "Заказ машины на выходные"
+    }, {
+      "text" : "Вызов такси в выходные дни"
+    }, {
+      "text" : "Вызов такси на выходные"
+    }, {
+      "text" : "Вызов машины в выходные дни"
+    }, {
+      "text" : "Вызов машины на выходные дни"
+    }, {
+      "text" : "Аренда такси на выходные"
+    }, {
+      "text" : "Подача заявки на такси в выходной"
+    }, {
+      "text" : "Подача заявки на машину в выходной"
+    }, {
+      "text" : "Подача заявки на трансфер в выходной"
+    }, {
+      "text" : "Подача заявки на такси в выходные"
+    }, {
+      "text" : "Подача заявки на машину в выходные"
+    }, {
+      "text" : "Подача заявки на трансфер в выходные"
+    }, {
+      "text" : "Способы заказа такси в выходные дни"
+    }, {
+      "text" : "Способы заказа машины на выходные дни"
+    }, {
+      "text" : "Способы заказа трансфера на выходные дни"
+    }, {
+      "text" : "Как оформить поездку на такси на выходные?"
+    }, {
+      "text" : "Как оформить поездку на машине на выходные?"
+    }, {
+      "text" : "Как оформить трансфер на выходные?"
+    }, {
+      "text" : "Как получить такси на выходные?"
+    }, {
+      "text" : "Как получить машину на выходные?"
+    }, {
+      "text" : "Как получить трансфер на выходные?"
+    }, {
+      "text" : "Как забронировать такси на выходные?"
+    }, {
+      "text" : "Как забронировать машину на выходные?"
+    }, {
+      "text" : "Как забронировать трансфер на выходные?"
+    }, {
+      "text" : "Процедура заказа такси на выходные"
+    }, {
+      "text" : "Процедура заказа машины на выходные"
+    }, {
+      "text" : "Процедура заказа трансфера на выходные"
+    }, {
+      "text" : "Получение такси на выходные"
+    }, {
+      "text" : "Получение машины на выходные"
+    }, {
+      "text" : "Получение трансфера на выходные  "
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Заказ/Заказ корпоративного транспорта/Почему моя заявка на такси не исполнена?",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "Почему моя заявка на такси не исполнена?"
+    }, {
+      "text" : "Почему моя заявка на такси не выполнена?"
+    }, {
+      "text" : "Проблемы с заявкой на такси"
+    }, {
+      "text" : "Причины невыполнения заявки на такси"
+    }, {
+      "text" : "Что делать, если моя заявка на такси не исполнена?"
+    }, {
+      "text" : "Что делать, если моя заявка на такси не выполнена?"
+    }, {
+      "text" : "Почему моя заявка на такси не удовлетворена?"
+    }, {
+      "text" : "Заявка на такси не удовлетворена"
+    }, {
+      "text" : "Заявка на такси не исполнена"
+    }, {
+      "text" : "Почему моя заявка на машину не исполнена?"
+    }, {
+      "text" : "Почему моя заявка на машину не выполнена?"
+    }, {
+      "text" : "Проблемы с заявкой на машину"
+    }, {
+      "text" : "Причины невыполнения заявки на машину"
+    }, {
+      "text" : "Что делать, если моя заявка на машину не исполнена?"
+    }, {
+      "text" : "Что делать, если моя заявка на машину не выполнена?"
+    }, {
+      "text" : "Почему моя заявка на машину не удовлетворена?"
+    }, {
+      "text" : "Заявка на машину не удовлетворена"
+    }, {
+      "text" : "Заявка на машину не исполнена"
+    }, {
+      "text" : "Почему моя заявка на трансфер не исполнена?"
+    }, {
+      "text" : "Почему моя заявка на трансфер не выполнена?"
+    }, {
+      "text" : "Проблемы с заявкой на трансфер"
+    }, {
+      "text" : "Причины невыполнения заявки на трансфер"
+    }, {
+      "text" : "Что делать, если моя заявка на трансфер не исполнена?"
+    }, {
+      "text" : "Что делать, если моя заявка на трансфер не выполнена?"
+    }, {
+      "text" : "Почему моя заявка на трансфер не удовлетворена?"
+    }, {
+      "text" : "Заявка на трансфер не удовлетворена"
+    }, {
+      "text" : "Заявка на трансфер не исполнена"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Заказ",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Заказ/Заказ корпоративного транспорта",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "Заказ корпоративного транспорта"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Заказ/Заказ корпоративного транспорта/Кто может заказать такси?",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "Кто может заказать такси?"
+    }, {
+      "text" : "Кто имеет право заказать такси?"
+    }, {
+      "text" : "Какие требования для заказа такси?"
+    }, {
+      "text" : "Могу ли я заказать такси?"
+    }, {
+      "text" : "Я могу заказать такси?"
+    }, {
+      "text" : "Какие ограничения для заказа такси?"
+    }, {
+      "text" : "Кто может заказать машину?"
+    }, {
+      "text" : "Кто имеет право заказать машину?"
+    }, {
+      "text" : "Какие требования для заказа машины?"
+    }, {
+      "text" : "Могу ли я заказать машину?"
+    }, {
+      "text" : "Я могу заказать машину?"
+    }, {
+      "text" : "Какие ограничения для заказа машины?"
+    }, {
+      "text" : "Кто может заказать трансфер?"
+    }, {
+      "text" : "Кто имеет право заказать трансфер?"
+    }, {
+      "text" : "Какие требования для заказа трансфера?"
+    }, {
+      "text" : "Могу ли я заказать трансфер?"
+    }, {
+      "text" : "Я могу заказать трансфер?"
+    }, {
+      "text" : "Какие ограничения для заказа трансфера?"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Услуга/HelpDesk",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "HelpDesk"
+    }, {
+      "text" : "Help Desk"
+    }, {
+      "text" : "helpDesk"
+    }, {
+      "text" : "Helpdesk"
+    }, {
+      "text" : "help desk"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Информация о чат-боте",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "Информация о чат-боте"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Оправить и создать новое",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "Оправить и создать новое"
+    }, {
+      "text" : "Оправить и создать"
+    }, {
+      "text" : "Оправить и новое"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Комплаенс этика и закон/Социальная поддержка/Санаторно-курортный отдых и оздоровление new",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Комплаенс этика и закон/Социальная поддержка/Санаторно-курортный отдых и оздоровление new/Информация об отдыхе и оздоровлении",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "Информация об отдыхе и оздоровлении"
+    }, {
+      "text" : "Информация об отдыхе"
+    }, {
+      "text" : "Информация об оздоровлении"
+    }, {
+      "text" : "Санаторно-курортный отдых и оздоровление"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Комплаенс этика и закон/Социальная поддержка/Санаторно-курортный отдых и оздоровление new/Отдых в Гостиничном комплексе \"Романтик\", Карачаево-Черкесия",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "Архыз"
+    }, {
+      "text" : " Карачаево Черкесия"
+    }, {
+      "text" : " Карачаево-Черкесия"
+    }, {
+      "text" : "Романтик"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Комплаенс этика и закон/Социальная поддержка/Санаторно-курортный отдых и оздоровление new/Отдых в Пансионате Бургас, Краснодарский край",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "Отдых в Пансионате Бургас, Краснодарский край"
+    }, {
+      "text" : "Бургас"
+    }, {
+      "text" : "Пансионате Бургас"
+    }, {
+      "text" : "Пансионат в Сочи"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Комплаенс этика и закон/Социальная поддержка/Санаторно-курортный отдых и оздоровление new/Отдых в Пансионате Тополь, Ростовская область",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "Отдых в Пансионате Тополь, Ростовская область"
+    }, {
+      "text" : "Пансионате Тополь"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Комплаенс этика и закон/Социальная поддержка/Санаторно-курортный отдых и оздоровление new/Отдых на Базе отдыха Трубник, Свердловская область",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "Отдых на Базе отдыха \"Трубник\", Свердловская область"
+    }, {
+      "text" : "Отдых на Базе отдыха Трубник, Свердловская область"
+    }, {
+      "text" : "Базе отдыха Трубник"
+    }, {
+      "text" : "база отдыха на берегу Макаровского водохранилища"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Комплаенс этика и закон/Социальная поддержка/Санаторно-курортный отдых и оздоровление new/Санатории для оздоровления работающих во вредных условиях труда",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "Санатории для оздоровления работающих во вредных условиях труда"
+    }, {
+      "text" : "Санатории для оздоровления"
+    }, {
+      "text" : "Санатории для оздоровления работающих во вредных условиях труда"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Комплаенс этика и закон/Социальная поддержка/Санаторно-курортный отдых и оздоровление new/Отдых на Базе отдыха Сосновый Бор, Свердловская область",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "\"Отдых на Базе отдыха \"Сосновый Бор\", Свердловская область\""
+    }, {
+      "text" : "Отдых на Базе отдыха Сосновый Бор"
+    }, {
+      "text" : "Сосновый Бор"
+    }, {
+      "text" : "База отдыха в Первоуральске"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Комплаенс этика и закон/Социальная поддержка/Санаторно-курортный отдых и оздоровление new/Санаторно-курортный отдых и оздоровление",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "Информация об отдыхе и оздоровлении"
+    }, {
+      "text" : "Информация об отдыхе"
+    }, {
+      "text" : "Информация об оздоровлении"
+    }, {
+      "text" : "Санаторно-курортный отдых и оздоровление"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Камеры",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Библиотека",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Камеры/Камера в столовой",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "Камера в столовой"
+    }, {
+      "text" : "Камера"
+    }, {
+      "text" : "Камери"
+    }, {
+      "text" : "Камеры"
+    }, {
+      "text" : "видео столовых"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Библиотека/TMK2U",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "TMK2U "
+    }, {
+      "text" : "Корпоративная библиотека"
+    }, {
+      "text" : "библиотека"
+    }, {
+      "text" : "Библиотека"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Расчетных листов",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "Расчетных листов"
+    }, {
+      "text" : "расчетный лист"
+    }, {
+      "text" : "расчетный лист?"
+    }, {
+      "text" : "Расчетный лист"
+    }, {
+      "text" : "Расчетные листы"
+    }, {
+      "text" : "зарплата"
+    }, {
+      "text" : "сколько я получу"
+    }, {
+      "text" : "где посмотреть зарплату"
+    }, {
+      "text" : "корешок"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Заявка на 2-НДФЛ",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "Заявка на 2-НДФЛ"
+    }, {
+      "text" : "2-НДФЛ"
+    }, {
+      "text" : "НДФЛ"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Сказка",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "Сказка"
+    }, {
+      "text" : "Сказки"
+    }, {
+      "text" : "Промпты"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/YandexGPT",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "getAnswerYandexGPT"
+    }, {
+      "text" : "YandexGPT"
+    }, {
+      "text" : "yandexgpt"
+    }, {
+      "text" : "ЯндексGPT"
+    }, {
+      "text" : "яндексGPT"
+    }, {
+      "text" : "яндексgpt"
+    }, {
+      "text" : "yandex"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Get_companies?",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : " Get_companies?"
+    }, {
+      "text" : " Get_companies"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Курс валют",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "Курс валют"
+    }, {
+      "text" : "доллар"
+    }, {
+      "text" : "Курс доллар"
+    }, {
+      "text" : "Какой сейчас курс валют"
+    }, {
+      "text" : "Валюта"
+    }, {
+      "text" : "Какой текущий курс?"
+    }, {
+      "text" : "Обновленные курс валют"
+    }, {
+      "text" : "Актуальный курс валют"
+    }, {
+      "text" : "Иностранная валюта"
+    }, {
+      "text" : "Курс иностранной валюты"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Биржа идей",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "Предложение по улучшению"
+    }, {
+      "text" : "Площадка для предложений Сервис для идей"
+    }, {
+      "text" : "Сервис для предложений"
+    }, {
+      "text" : "Где найти ресурсы для обмена концепциями и идеями?"
+    }, {
+      "text" : "Где найти ресурсы для предложений по улучшению?"
+    }, {
+      "text" : "Где можно выдвинуть предложение по улучшению?"
+    }, {
+      "text" : "Где можно выдвинуть идею по улучшению?"
+    }, {
+      "text" : "Где найти биржу идей?"
+    }, {
+      "text" : "Где можно выдвинуть свою идею?"
+    }, {
+      "text" : "Где найти ресурсы для выдвижения своих идей?"
+    }, {
+      "text" : "Как отправить своё предложение на биржу идей?"
+    }, {
+      "text" : "Подробнее о бирже идей"
+    }, {
+      "text" : "Информация о бирже идей"
+    }, {
+      "text" : "Биржа идей ТМК"
+    }, {
+      "text" : "Идеи для компании"
+    }, {
+      "text" : "Предложения по улучшению ТМК"
+    }, {
+      "text" : "Идеи для ТМК"
+    }, {
+      "text" : "Есть идея по улучшению"
+    }, {
+      "text" : "Хочу предложить идею по улучшению"
+    }, {
+      "text" : "Есть идея для ТМК"
+    }, {
+      "text" : "Хочу подать заявку на биржу идей"
+    }, {
+      "text" : "Хочу предложить свою идею для ТМК"
+    }, {
+      "text" : "Хочу подать идею для биржи идей"
+    }, {
+      "text" : "Хочу предложить свою идею для ТМК"
+    }, {
+      "text" : "Хочу подать предложение на биржу идей"
+    }, {
+      "text" : "Хочу продвинуть свою идею"
+    }, {
+      "text" : "Идеи по улучшениям"
+    }, {
+      "text" : "Как подать идею по улучшению"
+    }, {
+      "text" : "Что такое биржа идей?"
+    }, {
+      "text" : "Что такое биржа идей"
+    }, {
+      "text" : "Сервис подачи идей"
+    }, {
+      "text" : "Предложения по улучшению"
+    }, {
+      "text" : "Как подать предложения по улучшению"
+    }, {
+      "text" : "Сервис подачи предложений"
+    }, {
+      "text" : "Как подать предложение на предприятии"
+    }, {
+      "text" : "Хочу предложить идею для предприятия"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Поиск сотрудника",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "Поиск сотрудника"
+    }, {
+      "text" : "Поиск коллеги"
+    }, {
+      "text" : "Поиск человека"
+    }, {
+      "text" : "Как найти сотрудника?"
+    }, {
+      "text" : "Как найти коллегу?"
+    }, {
+      "text" : "Как найти человека?"
+    }, {
+      "text" : "Где найти сотрудника?"
+    }, {
+      "text" : "Где найти коллегу?"
+    }, {
+      "text" : "Где найти человека"
+    }, {
+      "text" : "Хочу найти коллегу"
+    }, {
+      "text" : "Хочу найти сотрудника"
+    }, {
+      "text" : "Ищу сотрудника"
+    }, {
+      "text" : "Хочу найти человека"
+    }, {
+      "text" : "Ищу человека"
+    }, {
+      "text" : "Ищу коллегу"
+    }, {
+      "text" : "Найти сотрудника"
+    }, {
+      "text" : "Найти коллегу"
+    }, {
+      "text" : "Найти человека"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Заявка в службу эксплуатации",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "Заявка в службу эксплуатации"
+    }, {
+      "text" : "Заявка в службу эксплуатации административной дирекции"
+    }, {
+      "text" : "Заявка в административную дирекцию"
+    }, {
+      "text" : "Заявка в АХД"
+    }, {
+      "text" : "Проблема в офисе"
+    }, {
+      "text" : "Проблема с оборудованием"
+    }, {
+      "text" : "Закончился тонер"
+    }, {
+      "text" : "Перегорела лампочка"
+    }, {
+      "text" : "АХД"
+    }, {
+      "text" : "Починить кондиционер"
+    }, {
+      "text" : "Требуется уборка"
+    }, {
+      "text" : "Не работает кондиционер"
+    }, {
+      "text" : "Уборка"
+    }, {
+      "text" : "Заказать уборку"
+    }, {
+      "text" : "Ремонт"
+    }, {
+      "text" : "Требуется ремонт"
+    }, {
+      "text" : "Требуется замена оборудования"
+    }, {
+      "text" : "Сломалось оборудование"
+    }, {
+      "text" : "Замена оборудования Закончилась бумага"
+    }, {
+      "text" : "Заказать бумагу"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Дни рождения",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "Дни рождения"
+    }, {
+      "text" : "Дни рождения коллег"
+    }, {
+      "text" : "Дни рождения сотрудников"
+    }, {
+      "text" : "У кого сегодня день рождения?"
+    }, {
+      "text" : "Кто сегодня именинник?"
+    }, {
+      "text" : "У каких сотрудников сегодня день рождения?"
+    }, {
+      "text" : "Именинник"
+    }, {
+      "text" : "Именинник дня"
+    }, {
+      "text" : "Кто отмечает сегодня день рождения?"
+    }, {
+      "text" : "Кто из сотрудников отмечает сегодня день рождения?"
+    }, {
+      "text" : "Календарь дней рождений"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Заказ гостевого пропуска",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "Информация по заказу пропуска"
+    }, {
+      "text" : "Куда можно заказать гостевой пропуск?"
+    }, {
+      "text" : "Почему у меня недоступен выбор способа получения пропуска \"Ресепшн\"? "
+    }, {
+      "text" : "Почему у меня недоступен выбор способа получения пропуска Ресепшн? "
+    }, {
+      "text" : "Чем отличаются способы получения пропуска по СМС, e-mail или Ресепшн?"
+    }, {
+      "text" : "Как проверить статус оформленной заявки?"
+    }, {
+      "text" : "Как проверить статус оформленной заявки"
+    }, {
+      "text" : "Как подавать заявки без согласования?"
+    }, {
+      "text" : "Как подавать заявки без согласования"
+    }, {
+      "text" : "Кто может согласовать заявку при отсутсвии Руководителя?"
+    }, {
+      "text" : "Кто может согласовать заявку при отсутсвии Руководителя"
+    }, {
+      "text" : "Как подать заявку только на въезд автомобиля?"
+    }, {
+      "text" : "Как подать заявку только на въезд автомобиля"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Электронные ключницы",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "Электронные ключницы"
+    }, {
+      "text" : "Как получить ключ?"
+    }, {
+      "text" : "Как правильно сдать ключ?"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Личный профиль на портале",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "Профиль"
+    }, {
+      "text" : "Личный профиль на портале"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/HelpDesk сценарий",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "Обращения helpdesk"
+    }, {
+      "text" : "Главный экран"
+    }, {
+      "text" : "Главная страница"
+    }, {
+      "text" : "HelpDesk сценарий"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/IAM_Token",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "IAM_Token"
+    }, {
+      "text" : "IAMToken"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/На главную",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  } ],
+  "entities" : [ ],
+  "enabledSystemEntities" : [ "duckling.number", "duckling.time", "duckling.duration", "duckling.phone-number", "duckling.email", "duckling.url" ],
+  "spellerDictionary" : [ ],
+  "systemEntities" : [ {
+    "name" : "mystem.geo",
+    "enabled" : false
+  }, {
+    "name" : "mystem.persn",
+    "enabled" : false
+  }, {
+    "name" : "mystem.obsc",
+    "enabled" : false
+  }, {
+    "name" : "mystem.patrn",
+    "enabled" : false
+  }, {
+    "name" : "mystem.famn",
+    "enabled" : false
+  }, {
+    "name" : "pymorphy.romn",
+    "enabled" : false
+  }, {
+    "name" : "pymorphy.latn",
+    "enabled" : false
+  }, {
+    "name" : "pymorphy.numb",
+    "enabled" : false
+  }, {
+    "name" : "pymorphy.intg",
+    "enabled" : false
+  }, {
+    "name" : "pymorphy.abbr",
+    "enabled" : false
+  }, {
+    "name" : "pymorphy.name",
+    "enabled" : false
+  }, {
+    "name" : "pymorphy.surn",
+    "enabled" : false
+  }, {
+    "name" : "pymorphy.patr",
+    "enabled" : false
+  }, {
+    "name" : "pymorphy.geox",
+    "enabled" : false
+  }, {
+    "name" : "pymorphy.orgn",
+    "enabled" : false
+  }, {
+    "name" : "duckling.number",
+    "version" : "v2",
+    "enabled" : true
+  }, {
+    "name" : "duckling.ordinal",
+    "version" : "v2",
+    "enabled" : false
+  }, {
+    "name" : "duckling.amount-of-money",
+    "version" : "v2",
+    "enabled" : false
+  }, {
+    "name" : "duckling.distance",
+    "version" : "v2",
+    "enabled" : false
+  }, {
+    "name" : "duckling.time",
+    "version" : "v2",
+    "enabled" : true
+  }, {
+    "name" : "duckling.date",
+    "version" : "v2",
+    "enabled" : false
+  }, {
+    "name" : "duckling.time-of-day",
+    "version" : "v2",
+    "enabled" : false
+  }, {
+    "name" : "duckling.duration",
+    "version" : "v2",
+    "enabled" : true
+  }, {
+    "name" : "duckling.phone-number",
+    "version" : "v2",
+    "enabled" : true
+  }, {
+    "name" : "duckling.email",
+    "version" : "v2",
+    "enabled" : true
+  }, {
+    "name" : "duckling.url",
+    "version" : "v2",
+    "enabled" : true
+  }, {
+    "name" : "duckling.interval",
+    "version" : "v2",
+    "enabled" : false
+  }, {
+    "name" : "mlps-obscene.obscene",
+    "enabled" : false
+  }, {
+    "name" : "zb.datetime",
+    "enabled" : false
+  }, {
+    "name" : "zb.number",
+    "enabled" : false
+  } ],
+  "faq" : [ ],
+  "skills" : [ ]
+}

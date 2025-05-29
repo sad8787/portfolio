@@ -1,0 +1,3 @@
+Публикация контейнера в Яндекс Cloud
+
+docker build -t auth-bot-image .

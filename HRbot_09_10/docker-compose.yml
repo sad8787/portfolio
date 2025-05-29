@@ -1,0 +1,30 @@
+version: '3.1'
+
+services:
+
+  db:
+    image: ${registry_url}/postgres:15.1
+    container_name: db
+    restart: always
+    environment:
+      POSTGRES_USER: ${bd_user}
+      POSTGRES_PASSWORD: ${bd_password}
+      PGDATA: /var/lib/postgresql/data/pgdata
+    volumes:
+      - /var/docker/hrbot/init/init-user-db.sh:/docker-entrypoint-initdb.d/init-user-db.sh
+      - /var/docker/hrbot/pgdata:/var/lib/postgresql/data/pgdata
+
+  adminer:
+    image: ${registry_url}/adminer:4.8.1
+    restart: always
+    ports:
+      - 8080:8080
+
+  app:
+    image: ${registry_url}/chatbot/hrbot:${image_version}
+    restart: always
+    environment:
+      token: ${bot_token}
+      user: ${bd_bot_user}
+      password: ${bd_bot_password}
+

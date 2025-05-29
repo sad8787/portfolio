@@ -1,0 +1,20 @@
+/.vs
+/.idea
+/postgres
+/scripts/__pycache__
+/scripts/bot_admin.py
+/scripts/excel.xlsx
+/scripts/list_user_excel.xlsx
+/env
+/bot.py
+/Backlog.txt
+/docs/AndreyT999.txt
+/UnitTests/__pycache__/
+/docs/AndreyT999.txt
+/data/config_test.ini
+/data/config_oficial.ini
+/data/config.ini
+/scripts/excel.xlsx
+/excel.xlsx
+/docs/HR hub.txt
+docs/

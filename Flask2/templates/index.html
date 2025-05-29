@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>index</title>
+</head>
+<body>
+    <h1>Login</h1>
+    <form id="loginForm"   action="/login" method="POST"> 
+        <label>Usuario:</label>
+        <input type="email" class="form-control" id="email" name="email" placeholder="email">
+        
+        <label>Password:</label>
+        <input type="password" class="form-control" id="password" name="password" placeholder="Password"><br>
+        
+        <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
+    </form>
+
+    <script>
+        // Obtén el formulario y agrega un evento de envío
+        const form = document.getElementById('loginForm');
+
+        form.addEventListener('submit', async (event) => {
+            // Evita que el formulario se envíe de forma predeterminada
+            event.preventDefault();
+
+            // Obtén los valores de los campos
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            // Crea un objeto JSON con los datos del formulario
+            const data = {                
+                email: email,
+                password: password,
+                controlador:"users",
+                action:"login"
+            };
+
+            try {
+                // Envía los datos como JSON al backend usando fetch
+                const response = await fetch('/sadiel/api', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                });
+                
+                // Maneja la respuesta del servidor
+                if (response.ok) {
+                    const result = await response.json();
+                    alert(`Login successful!${result.message} ${result.token}`);
+                    localStorage.setItem('token', result.token); // Save token to localStorage
+                    window.location.href = '/dashboard'; // Redirect to the dashboard or another page  
+                } else {
+                    const error = await response.json();
+                    alert(`Error: ${error.message}`);
+                }
+            } catch (error) {
+                console.error('Error al enviar JSON:', error);
+                alert('Hubo un problema al enviar los datos.');
+            }
+        });
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Login</title>
+</head>
+<body>
+    <h1>Login</h1>
+    <form id="registerForm"   action="/register" method="POST"> 
+        <label>Usuario:</label>
+        <input type="text" class="form-control" id="name" name="name" placeholder="name">
+        <label>Email:</label>
+        <input type="email" class="form-control" id="email" name="email" placeholder="email">
+        <label>Password:</label>
+        <input type="password" class="form-control" id="password" name="password" placeholder="Password"><br>
+        
+        <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
+    </form>
+
+    <script>
+        // Obtén el formulario y agrega un evento de envío
+        const form = document.getElementById('registerForm');
+
+        form.addEventListener('submit', async (event) => {
+            // Evita que el formulario se envíe de forma predeterminada
+            event.preventDefault();
+
+            // Obtén los valores de los campos
+            const name = document.getElementById('name').value;
+            const password = document.getElementById('password').value;
+            const email = document.getElementById('email').value;
+
+            // Crea un objeto JSON con los datos del formulario
+            const data = {                
+                name: name,
+                password: password,
+                email:email,
+                controlador:"users",
+                action:"add"
+            };
+
+            try {
+                // Envía los datos como JSON al backend usando fetch
+                const response = await fetch('/sadiel/api', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                    
+                });
+
+                // Maneja la respuesta del servidor
+                if (response.ok) {
+                    const result = await response.json();
+                    alert(`register : ${result.message}`);
+                } else {
+                    const error = await response.json();
+                    alert(`Error: ${error.message}`);
+                }
+            } catch (error) {
+                console.error('Error al enviar JSON:', error);
+                alert('Hubo un problema al enviar los datos.');
+            }
+        });
+    </script>
+    
+</body>
+</html>

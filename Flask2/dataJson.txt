@@ -1,0 +1,47 @@
+           
+data{
+    "controlador":"users,proyecto,covocatoria"
+    "action": " delet,update,list,search,add,searchById,   changePassword(solo para user)
+    "id" : "value"
+    "name" :"value"
+    "email" :"value"
+    "password" :"value"
+    "is_admin" :"value"    
+    "fecha" :"value"
+    "url" :"value"
+    "descripcion" :"value"
+    "activo":"bool"
+    "token": access_token
+    "searchvalue": text      => para user name or email 
+}
+
+#users changePassword
+data{
+    id
+    newpassword
+    oldpassword
+    controlador:"users",
+    action:"changePassword"
+}
+
+responde
+data{
+    "controlador":"users,proyecto,covocatoria"
+    "action": " delet,update,list,search,add,searchById,   changePassword(solo para user)
+    "id" : "value"
+    "name" :"value"
+    "email" :"value"
+    "password" :"value"
+    "is_admin" :"bool"    
+    "fecha" :"value"
+    "url" :"value"
+    "descripcion" :"value"
+    "activo":"bool"
+    "token": access_token
+    "success" :bool
+    "ok": bool
+    "message": text
+    "users": []
+    "len": int
+    "user": user
+}

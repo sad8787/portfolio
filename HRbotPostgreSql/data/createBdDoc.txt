@@ -1,0 +1,58 @@
+CREATE TABLE IF NOT EXISTS answers (
+answer_id INT,
+question_id INT,
+answer TEXT,
+PRIMARY KEY (answer_id, question_id)
+);
+CREATE TABLE IF NOT EXISTS block_end_data (
+correct_answers_5 TEXT,
+correct_answers_4 TEXT,
+correct_answers_3 TEXT,
+correct_answers_2 TEXT,
+correct_answers_1 TEXT,
+correct_answers_0 TEXT,
+offer TEXT,
+image TEXT
+);
+CREATE TABLE IF NOT EXISTS contacts_structure (
+	contact_id SERIAL PRIMARY KEY ,
+	contact_name TEXT,
+	contact_message TEXT,
+	reg_exp TEXT
+);
+CREATE TABLE IF NOT EXISTS questions (
+question_id INT PRIMARY KEY,
+block_id INT,
+question_type TEXT,
+right_answer TEXT,
+question TEXT,
+image TEXT
+);
+CREATE TABLE IF NOT EXISTS sqlite_sequence(name,seq);
+CREATE TABLE IF NOT EXISTS users (
+user_id INT PRIMARY KEY,
+is_test_active INT,
+block_id INT,
+questions_order TEXT,
+question_index INT,
+contact_index INT,
+agreement INT
+);
+CREATE TABLE IF NOT EXISTS users_answers (
+user_id INT,
+question_id INT,
+is_correct INT,
+PRIMARY KEY (user_id, question_id)
+);
+CREATE TABLE  IF NOT EXISTS users_contacts (
+user_id INT,
+contact_name TEXT,
+contact_value TEXT,
+PRIMARY KEY (user_id, contact_name)
+);
+CREATE TABLE IF NOT EXISTS users_open_answers (
+user_id INT,
+question_id INT,
+answer TEXT,
+PRIMARY KEY (user_id, question_id)
+);
