@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35312.102
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "Обработка_csv_файла", "Обработка_csv_файла.pyproj", "{DDCB3D99-4BE3-411F-965B-D03F822EB7CB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DDCB3D99-4BE3-411F-965B-D03F822EB7CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DDCB3D99-4BE3-411F-965B-D03F822EB7CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A6CD4F7E-20E3-4CE6-BDE9-7F59216A7022}
+	EndGlobalSection
+EndGlobal
