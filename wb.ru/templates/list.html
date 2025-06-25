@@ -1,0 +1,196 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Productos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            max-width: 1200px;
+            margin: 20px auto;
+        }
+
+        h1 {
+            color: #0056b3;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #28a745; /* Un color diferente para distinguirlo */
+            color: white;
+            font-weight: bold;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        .no-results, .error-message {
+            text-align: center;
+            padding: 20px;
+            background-color: #ffe0e0;
+            border: 1px solid #ffc0c0;
+            color: #d8000c;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+
+        .error-message {
+            background-color: #f8d7da;
+            border-color: #f5c6cb;
+            color: #721c24;
+        }
+
+        .back-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #6c757d;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+            .back-button:hover {
+                background-color: #5a6268;
+            }
+
+        img {
+            max-width: 80px;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* --- Estilos para la paginación --- */
+        .pagination {
+            text-align: center;
+            margin-top: 30px;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px; /* Espacio entre los elementos de paginación */
+        }
+
+            .pagination a {
+                display: inline-block;
+                padding: 10px 20px;
+                background-color: #007bff;
+                color: white;
+                text-decoration: none;
+                border-radius: 5px;
+                transition: background-color 0.3s ease;
+            }
+
+                .pagination a:hover {
+                    background-color: #0056b3;
+                }
+
+                .pagination a.disabled {
+                    background-color: #cccccc;
+                    cursor: not-allowed;
+                    pointer-events: none; /* Evita que sea clickeable */
+                    color: #666;
+                }
+
+            .pagination span {
+                font-size: 1.1em;
+                font-weight: bold;
+                color: #444;
+            }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Lista de Productos</h1>
+
+        {% if error_message %}
+        <div class="error-message">
+            {{ error_message }}
+        </div>
+        {% elif products %}
+        <table>
+            <thead>
+                <tr>
+                    <th>Imagen</th>
+                    <th>Nombre</th>
+                    <th>Marca</th>
+                    <th>Precio (RUB)</th>
+                    <th>Valoración</th>
+                    <th>Reseñas</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for product in products %}
+                <tr>
+                    <td>
+                        {% if product.id %} {# Usamos product.id para la URL de la imagen #}
+                        <img src="https://images.wbstatic.net/c246x328/{{ product.id }}.jpg" alt="{{ product.name }}">
+                        {% else %}
+                        No Image
+                        {% endif %}
+                    </td>
+                    <td>{{ product.name }}</td>
+                    <td>{{ product.brand }}</td>
+                    <td>{{ (product.salePriceU / 100) | int }}</td> {# Convertir kopeks a rublos y quitar decimales #}
+                    <td>{{ product.rating }}</td>
+                    <td>{{ product.feedbacks }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <div class="pagination">
+            {# Botón Anterior #}
+            {% if has_prev_page %}
+            <a href="{{ url_for('list_products', page=current_page - 1) }}">Anterior</a>
+            {% else %}
+            <a href="#" class="disabled">Anterior</a>
+            {% endif %}
+
+            <span>Página {{ current_page }}</span>
+
+            {# Botón Siguiente #}
+            {% if has_next_page %}
+            <a href="{{ url_for('list_products', page=current_page + 1) }}">Siguiente</a>
+            {% else %}
+            <a href="#" class="disabled">Siguiente</a>
+            {% endif %}
+        </div>
+
+        {% else %}
+        <div class="no-results">
+            No se encontraron productos para mostrar.
+        </div>
+        {% endif %}
+
+        <a href="/" class="back-button">Volver al Inicio</a>
+    </div>
+</body>
+</html>
