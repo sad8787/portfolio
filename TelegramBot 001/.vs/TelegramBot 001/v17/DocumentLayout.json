@@ -1,0 +1,138 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\sadie\\source\\repos\\TelegramBot 001\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{4979B0A9-6255-431F-B97C-121B36FED27D}|TelegramBot 001.pyproj|C:\\Users\\sadie\\source\\repos\\TelegramBot 001\\.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{4979B0A9-6255-431F-B97C-121B36FED27D}|TelegramBot 001.pyproj|solutionrelative:.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4979B0A9-6255-431F-B97C-121B36FED27D}|TelegramBot 001.pyproj|C:\\Users\\sadie\\source\\repos\\TelegramBot 001\\TelegramBot_001.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{4979B0A9-6255-431F-B97C-121B36FED27D}|TelegramBot 001.pyproj|solutionrelative:TelegramBot_001.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4979B0A9-6255-431F-B97C-121B36FED27D}|TelegramBot 001.pyproj|C:\\Users\\sadie\\source\\repos\\TelegramBot 001\\configExample.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{4979B0A9-6255-431F-B97C-121B36FED27D}|TelegramBot 001.pyproj|solutionrelative:configExample.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4979B0A9-6255-431F-B97C-121B36FED27D}|TelegramBot 001.pyproj|C:\\Users\\sadie\\source\\repos\\TelegramBot 001\\config.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{4979B0A9-6255-431F-B97C-121B36FED27D}|TelegramBot 001.pyproj|solutionrelative:config.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4979B0A9-6255-431F-B97C-121B36FED27D}|TelegramBot 001.pyproj|C:\\Users\\sadie\\source\\repos\\TelegramBot 001\\db\\models.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{4979B0A9-6255-431F-B97C-121B36FED27D}|TelegramBot 001.pyproj|solutionrelative:db\\models.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4979B0A9-6255-431F-B97C-121B36FED27D}|TelegramBot 001.pyproj|C:\\Users\\sadie\\source\\repos\\TelegramBot 001\\db\\init.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{4979B0A9-6255-431F-B97C-121B36FED27D}|TelegramBot 001.pyproj|solutionrelative:db\\init.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{605322a2-17ae-43f4-b60f-766556e46c87}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "configExample.py",
+              "DocumentMoniker": "C:\\Users\\sadie\\source\\repos\\TelegramBot 001\\configExample.py",
+              "RelativeDocumentMoniker": "configExample.py",
+              "ToolTip": "C:\\Users\\sadie\\source\\repos\\TelegramBot 001\\configExample.py",
+              "RelativeToolTip": "configExample.py",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2025-07-01T14:12:13.86Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": ".gitignore",
+              "DocumentMoniker": "C:\\Users\\sadie\\source\\repos\\TelegramBot 001\\.gitignore",
+              "RelativeDocumentMoniker": ".gitignore",
+              "ToolTip": "C:\\Users\\sadie\\source\\repos\\TelegramBot 001\\.gitignore",
+              "RelativeToolTip": ".gitignore",
+              "ViewState": "AgIAACsAAAAAAAAAAAAAAAUAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-07-01T14:10:00.292Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "config.py",
+              "DocumentMoniker": "C:\\Users\\sadie\\source\\repos\\TelegramBot 001\\config.py",
+              "RelativeDocumentMoniker": "config.py",
+              "ToolTip": "C:\\Users\\sadie\\source\\repos\\TelegramBot 001\\config.py",
+              "RelativeToolTip": "config.py",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2025-06-30T13:48:44.749Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "init.py",
+              "DocumentMoniker": "C:\\Users\\sadie\\source\\repos\\TelegramBot 001\\db\\init.py",
+              "RelativeDocumentMoniker": "db\\init.py",
+              "ToolTip": "C:\\Users\\sadie\\source\\repos\\TelegramBot 001\\db\\init.py",
+              "RelativeToolTip": "db\\init.py",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2025-06-29T11:51:52.707Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "models.py",
+              "DocumentMoniker": "C:\\Users\\sadie\\source\\repos\\TelegramBot 001\\db\\models.py",
+              "RelativeDocumentMoniker": "db\\models.py",
+              "ToolTip": "C:\\Users\\sadie\\source\\repos\\TelegramBot 001\\db\\models.py",
+              "RelativeToolTip": "db\\models.py",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABkAAABcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2025-06-29T11:38:17.227Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "TelegramBot_001.py",
+              "DocumentMoniker": "C:\\Users\\sadie\\source\\repos\\TelegramBot 001\\TelegramBot_001.py",
+              "RelativeDocumentMoniker": "TelegramBot_001.py",
+              "ToolTip": "C:\\Users\\sadie\\source\\repos\\TelegramBot 001\\TelegramBot_001.py",
+              "RelativeToolTip": "TelegramBot_001.py",
+              "ViewState": "AgIAACwAAAAAAAAAAAAqwDcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2025-06-29T11:33:44.975Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

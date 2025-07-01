@@ -1,0 +1,59 @@
+# Compiled documentation output (e.g., from Sphinx, MkDocs, Jekyll)
+_build/
+build/
+site/
+out/
+public/
+.output/
+
+# Common temporary files and caches
+*.tmp
+*.temp
+*.bak
+*.swp # vim swap files
+*.swo # vim swap files
+*~    # Emacs backup files
+.#* # Emacs lock files
+.DS_Store # macOS specific files
+Thumbs.db # Windows specific files
+ehthumbs.db
+.ipynb_checkpoints/ # Jupyter notebooks checkpoints
+.pytest_cache/ # pytest cache
+__pycache__/ # Python compiled bytecode
+*.pyc
+*.pyo
+
+# Virtual environment (if using Python for docs like Sphinx/MkDocs)
+.venv/
+venv/
+env/
+
+# Dependency management files
+node_modules/ # For JavaScript-based documentation generators (e.g., Docusaurus)
+
+# Log files
+*.log
+logs/
+
+# Sensitive information (example - adjust as needed)
+.env
+.env.*
+config.local.js
+my_api_key.txt
+
+# Editor/IDE specific files
+.idea/ # IntelliJ / PyCharm project files
+.vscode/ # VS Code settings (consider what to ignore here)
+*.sublime-project
+*.sublime-workspace
+.project
+.classpath
+.settings/
+config.py
+.config.py
+
+# Generated image or large data files (if not source)
+# If images are generated from scripts and not meant to be versioned,
+# you can ignore them. Otherwise, include them.
+# generated_images/
+# large_data_files/
