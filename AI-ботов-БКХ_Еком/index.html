@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <title>Prueba de moderación de imágenes</title>
+</head>
+<body>
+    <h2>Sube una imagen para moderación NSFW</h2>
+    <form id="uploadForm" enctype="multipart/form-data">
+        <input type="file" name="file" accept=".jpg, .jpeg, .png" required />
+        <button type="submit">Enviar</button>
+    </form>
+
+    <h3>Resultado:</h3>
+    <pre id="result"></pre>
+
+    <script>
+        const form = document.getElementById('uploadForm');
+        const result = document.getElementById('result');
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const formData = new FormData(form);
+            result.textContent = "Procesando...";
+
+            try {
+                const response = await fetch('/moderate', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                if (!response.ok) {
+                    throw new Error(`s Error: ${response.status} ${response.statusText} `);
+                }
+
+                const data = await response.json();
+                result.textContent = JSON.stringify(data, null, 2);
+            } catch (error) {
+                result.textContent = `Error al enviar la imagen: ${error.message}`;
+            }
+        });
+    </script>
+</body>
+</html>
