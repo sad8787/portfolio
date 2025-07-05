@@ -1,0 +1,54 @@
+videos/
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Caches
+*.log
+*.pot
+*.pyc
+*.pyo
+*.pyd
+*.db
+*.sqlite3
+*.ipynb_checkpoints
+
+# Virtual environments
+env/
+venv/
+ENV/
+.env/
+.venv/
+*.env
+*.venv
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# VS Code files
+.vscode/
+
+# PyCharm files
+.idea/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Model weights or large files
+*.pt
+*.pth
+*.onnx
+*.tflite
+*.pb
+*.weights
+
+
+
+# Output folders
+__results__/
+*.out
+*.tmp
+*.bak

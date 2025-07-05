@@ -1,0 +1,37 @@
+train: C:/Users/sadie/source/repos/YOLOЗЕБРА/dataset/images/train
+val: C:/Users/sadie/source/repos/YOLOЗЕБРА/dataset/images/val
+test: C:/Users/sadie/source/repos/YOLOЗЕБРА/dataset/images/test
+
+nc: 27
+names:
+  - dog
+  - person
+  - cat
+  - tv
+  - car
+  - meatballs
+  - marinara sauce
+  - tomato soup
+  - chicken noodle soup
+  - french onion soup
+  - chicken breast
+  - ribs
+  - pulled pork
+  - hamburger
+  - cavity------
+  - чашка
+  - чайник
+  - лепешка
+  - мясной
+  - салат
+  - soup
+  - суп
+  - tas
+  - водка
+  - телефон
+  - нож
+  - вилка
+
+
+  
+

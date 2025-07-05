@@ -1,0 +1,155 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\sadie\\source\\repos\\YOLO\u0417\u0415\u0411\u0420\u0410\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{46700E1F-EF93-4EC0-B495-37F3133FCAE8}|YOLO\u0417\u0415\u0411\u0420\u0410.pyproj|C:\\Users\\sadie\\source\\repos\\YOLO\u0417\u0415\u0411\u0420\u0410\\YOLO\u0417\u0415\u0411\u0420\u0410.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{46700E1F-EF93-4EC0-B495-37F3133FCAE8}|YOLO\u0417\u0415\u0411\u0420\u0410.pyproj|solutionrelative:YOLO\u0417\u0415\u0411\u0420\u0410.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{46700E1F-EF93-4EC0-B495-37F3133FCAE8}|YOLO\u0417\u0415\u0411\u0420\u0410.pyproj|C:\\Users\\sadie\\source\\repos\\YOLO\u0417\u0415\u0411\u0420\u0410\\trainer.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{46700E1F-EF93-4EC0-B495-37F3133FCAE8}|YOLO\u0417\u0415\u0411\u0420\u0410.pyproj|solutionrelative:trainer.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{46700E1F-EF93-4EC0-B495-37F3133FCAE8}|YOLO\u0417\u0415\u0411\u0420\u0410.pyproj|C:\\Users\\sadie\\source\\repos\\YOLO\u0417\u0415\u0411\u0420\u0410\\video90.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{46700E1F-EF93-4EC0-B495-37F3133FCAE8}|YOLO\u0417\u0415\u0411\u0420\u0410.pyproj|solutionrelative:video90.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{46700E1F-EF93-4EC0-B495-37F3133FCAE8}|YOLO\u0417\u0415\u0411\u0420\u0410.pyproj|C:\\Users\\sadie\\source\\repos\\YOLO\u0417\u0415\u0411\u0420\u0410\\.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{46700E1F-EF93-4EC0-B495-37F3133FCAE8}|YOLO\u0417\u0415\u0411\u0420\u0410.pyproj|solutionrelative:.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{46700E1F-EF93-4EC0-B495-37F3133FCAE8}|YOLO\u0417\u0415\u0411\u0420\u0410.pyproj|C:\\Users\\sadie\\source\\repos\\YOLO\u0417\u0415\u0411\u0420\u0410\\test.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{46700E1F-EF93-4EC0-B495-37F3133FCAE8}|YOLO\u0417\u0415\u0411\u0420\u0410.pyproj|solutionrelative:test.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{46700E1F-EF93-4EC0-B495-37F3133FCAE8}|YOLO\u0417\u0415\u0411\u0420\u0410.pyproj|C:\\Users\\sadie\\source\\repos\\YOLO\u0417\u0415\u0411\u0420\u0410\\Read me.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{46700E1F-EF93-4EC0-B495-37F3133FCAE8}|YOLO\u0417\u0415\u0411\u0420\u0410.pyproj|solutionrelative:Read me.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{46700E1F-EF93-4EC0-B495-37F3133FCAE8}|YOLO\u0417\u0415\u0411\u0420\u0410.pyproj|C:\\Users\\sadie\\source\\repos\\YOLO\u0417\u0415\u0411\u0420\u0410\\DatasetCreator.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{46700E1F-EF93-4EC0-B495-37F3133FCAE8}|YOLO\u0417\u0415\u0411\u0420\u0410.pyproj|solutionrelative:DatasetCreator.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 10,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{605322a2-17ae-43f4-b60f-766556e46c87}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": ".gitignore",
+              "DocumentMoniker": "C:\\Users\\sadie\\source\\repos\\YOLO\u0417\u0415\u0411\u0420\u0410\\.gitignore",
+              "RelativeDocumentMoniker": ".gitignore",
+              "ToolTip": "C:\\Users\\sadie\\source\\repos\\YOLO\u0417\u0415\u0411\u0420\u0410\\.gitignore",
+              "RelativeToolTip": ".gitignore",
+              "ViewState": "AgIAADUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-07-05T10:08:22.136Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Read me.txt",
+              "DocumentMoniker": "C:\\Users\\sadie\\source\\repos\\YOLO\u0417\u0415\u0411\u0420\u0410\\Read me.txt",
+              "RelativeDocumentMoniker": "Read me.txt",
+              "ToolTip": "C:\\Users\\sadie\\source\\repos\\YOLO\u0417\u0415\u0411\u0420\u0410\\Read me.txt",
+              "RelativeToolTip": "Read me.txt",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAABAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2025-07-05T07:00:00.287Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "DatasetCreator.py",
+              "DocumentMoniker": "C:\\Users\\sadie\\source\\repos\\YOLO\u0417\u0415\u0411\u0420\u0410\\DatasetCreator.py",
+              "RelativeDocumentMoniker": "DatasetCreator.py",
+              "ToolTip": "C:\\Users\\sadie\\source\\repos\\YOLO\u0417\u0415\u0411\u0420\u0410\\DatasetCreator.py",
+              "RelativeToolTip": "DatasetCreator.py",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACUAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2025-07-05T06:41:21.21Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "test.py",
+              "DocumentMoniker": "C:\\Users\\sadie\\source\\repos\\YOLO\u0417\u0415\u0411\u0420\u0410\\test.py",
+              "RelativeDocumentMoniker": "test.py",
+              "ToolTip": "C:\\Users\\sadie\\source\\repos\\YOLO\u0417\u0415\u0411\u0420\u0410\\test.py",
+              "RelativeToolTip": "test.py",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2025-07-04T21:17:54.405Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "video90.py",
+              "DocumentMoniker": "C:\\Users\\sadie\\source\\repos\\YOLO\u0417\u0415\u0411\u0420\u0410\\video90.py",
+              "RelativeDocumentMoniker": "video90.py",
+              "ToolTip": "C:\\Users\\sadie\\source\\repos\\YOLO\u0417\u0415\u0411\u0420\u0410\\video90.py",
+              "RelativeToolTip": "video90.py",
+              "ViewState": "AgIAAEsAAAAAAAAAAAAAAC0AAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2025-07-04T08:38:22.42Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "trainer.py",
+              "DocumentMoniker": "C:\\Users\\sadie\\source\\repos\\YOLO\u0417\u0415\u0411\u0420\u0410\\trainer.py",
+              "RelativeDocumentMoniker": "trainer.py",
+              "ToolTip": "C:\\Users\\sadie\\source\\repos\\YOLO\u0417\u0415\u0411\u0420\u0410\\trainer.py",
+              "RelativeToolTip": "trainer.py",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAABUAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2025-07-04T08:38:13.628Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "YOLO\u0417\u0415\u0411\u0420\u0410.py",
+              "DocumentMoniker": "C:\\Users\\sadie\\source\\repos\\YOLO\u0417\u0415\u0411\u0420\u0410\\YOLO\u0417\u0415\u0411\u0420\u0410.py",
+              "RelativeDocumentMoniker": "YOLO\u0417\u0415\u0411\u0420\u0410.py",
+              "ToolTip": "C:\\Users\\sadie\\source\\repos\\YOLO\u0417\u0415\u0411\u0420\u0410\\YOLO\u0417\u0415\u0411\u0420\u0410.py",
+              "RelativeToolTip": "YOLO\u0417\u0415\u0411\u0420\u0410.py",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2025-06-22T20:24:19.32Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
