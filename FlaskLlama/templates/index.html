@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Chat con IA</title>
+</head>
+<body>
+    <h2>Chat IA (выберите модель)</h2>
+
+    <form method="post">
+        <label for="mensaje">Tu mensaje:</label><br>
+        <input type="text" name="mensaje" required><br><br>
+
+        <label for="modelname">выберите модель:</label><br>
+        <select name="modelname">
+            <option value="tiny" {% if modelo=='tiny' %}selected{% endif %}>TinyLLaMA</option>
+            <option value="llama2" {% if modelo=='llama2' %}selected{% endif %}>LLaMA 2 7B</option>
+        </select><br><br>
+
+        <input type="submit" value="Enviar">
+    </form>
+
+    {% if respuesta %}
+    <h3>Ответ:</h3>
+    <p>{{ respuesta }}</p>
+    {% endif %}
+</body>
+</html>
+
+

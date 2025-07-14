@@ -1,0 +1,43 @@
+﻿# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Entornos virtuales
+env/
+venv/
+ENV/
+.venv/
+
+# Archivos de configuración del entorno
+*.env
+*.env.*
+
+# Archivos de log y bases de datos temporales
+*.log
+*.sqlite3
+*.db
+
+# Archivos del sistema operativo
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Archivos de depuración
+*.bak
+*.swp
+
+# Archivos de modelos grandes (por seguridad y tamaño)
+llama_models/
+*.gguf
+
+
+dist/
+build/
+*.egg-info/
+
+# IDEs
+.vscode/
+.idea/
+*.code-workspace
+
