@@ -1,0 +1,47 @@
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+<h:head>
+	<title>Pet Store</title>
+
+	<h:outputStylesheet name="webjars/bootstrap/3.4.1/css/bootstrap.min.css" />
+</h:head>
+<h:body>
+	<div class="container">
+		<nav class="navbar navbar-default">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="#">Pet Store</a>
+				</div>
+				<div id="navbar" class="navbar-collapse collapse">
+					<h:form rendered="#{login.currentUser.name != 'anonymous'}" class="navbar-form navbar-right">
+						<span>Current User: #{login.currentUser}</span>
+						<h:commandButton id="submit" class="btn btn-success" value="Logout" action="#{login.doLogout}" />
+					</h:form>
+					<h:form id="login-form" class="navbar-form navbar-right" rendered="#{login.currentUser == 'anonymous'}">
+						<div class="form-group">
+							<h:inputText id="login-field" class="#{login.currentUser == 'anonymous' and !login.error ? 'form-control' : 'form-control alert-danger'}"
+								value="#{login.login}" a:placeholder="login"></h:inputText>
+							<h:inputSecret id="password-field" class="#{login.currentUser == 'anonymous' and !login.error ? 'form-control' : 'form-control alert-danger'}"
+								value="#{login.password}" a:placeholder="password"></h:inputSecret>
+						</div>
+						<h:commandButton id="submit" class="btn btn-success" value="Login" action="#{login.doLogin}" />
+					</h:form>
+				</div>
+			</div>
+		</nav>
+
+		<div class="jumbotron">
+			<ui:insert name="jumbotron"/>
+		</div>
+
+		<div class="row marketing">
+			<ui:insert name="content"/>
+		</div>
+	</div>
+
+	<h:outputScript name="webjars/jquery/1.11.1/jquery.min.js" />
+	<h:outputScript name="webjars/bootstrap/3.4.1/js/bootstrap.min.js" />
+</h:body>
+</html>

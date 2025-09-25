@@ -1,0 +1,14 @@
+#Eclipse
+.settings
+.project
+.classpath
+
+#Maven
+target
+
+#General
+bak
+angularjs
+
+#Firefox
+C:\\nppdf32Log\\debuglog.txt

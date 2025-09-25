@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" 
+    xmlns:h="http://xmlns.jcp.org/jsf/html"
+    xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+	<head>
+		<title>Pet Store - Pets</title>	
+	</head>
+	<body>
+		<ui:composition template="../WEB-INF/template.xhtml">
+			<ui:define name="jumbotron">
+				<h2>New Pet</h2>
+				<h:panelGroup class="row">
+					<h:form>
+						<h:inputText class="form-control" a:placeholder="Pet name" value="#{pet.name}"></h:inputText>
+						<h:inputText value="#{pet.birth}" size="20" required="true" label="Receipt Date" class="form-control" a:placeholder="Birth (YYYY-MM-DD hh:mm:ss)">
+							<f:convertDateTime pattern="yyyy-M-d hh:mm:ss" />
+						</h:inputText>
+						<h:selectOneMenu value="#{pet.animal}" class="form-control">
+							<f:selectItem itemValue="BIRD" itemLabel="Bird" />
+							<f:selectItem itemValue="CAT" itemLabel="Cat" />
+							<f:selectItem itemValue="DOG" itemLabel="Dog" />
+						</h:selectOneMenu>
+						<h:inputHidden value="#{pet.id}"></h:inputHidden>
+						<h:commandButton id="submit" class="btn btn-default" value="Store" action="#{pet.store()}" />
+						<h:commandButton id="cancel" class="btn btn-default" value="Cancel" action="#{pet.cancelEditing()}" />
+					</h:form>
+				</h:panelGroup>
+				<div class="row">
+					<h:panelGroup class="alert alert-danger" role="alert" rendered="#{pet.error}">
+						<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+						Error: #{pet.errorMessage}
+					</h:panelGroup>
+				</div>
+		</ui:define>
+			<ui:define name="content">
+				<h:dataTable value="#{pet.pets}" var="petEntity" styleClass="table table-striped table-bordered">
+					<h:column>
+						<f:facet name="header">Name</f:facet>
+						#{petEntity.name}
+					</h:column>
+					<h:column>
+						<f:facet name="header">Birth</f:facet>
+						<h:outputText value="#{petEntity.birth}">
+							<f:convertDateTime pattern="yyyy-M-d hh:mm:ss" />
+						</h:outputText>
+					</h:column>
+					<h:column>
+						<f:facet name="header">Type</f:facet>
+						#{petEntity.animal}
+					</h:column>
+					<h:column>
+						<h:form>
+							<h:commandButton value="Remove" type="submit" action="#{pet.remove(petEntity.id)}"/>
+							<h:commandButton value="Edit" action="#{pet.edit(petEntity.id)}"/>
+						</h:form>
+					</h:column>
+				</h:dataTable>
+			</ui:define>
+		</ui:composition>
+	</body>
+</html>
