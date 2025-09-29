@@ -1,14 +1,10 @@
 package es.uvigo.esei.xcs.domain.entities;
 
-import static java.util.Objects.requireNonNull;
-import static org.apache.commons.lang3.Validate.inclusiveBetween;
-
 import java.io.Serializable;
+import static java.util.Objects.requireNonNull;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -19,6 +15,8 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
 
+import static org.apache.commons.lang3.Validate.inclusiveBetween;
+
 /**
  * An identifier for a pet.
  * Each identifier has a type (e.g., microchip, tattoo, passport) 
@@ -26,11 +24,14 @@ import javax.xml.bind.annotation.XmlTransient;
  * 
  * @author Sadiel Godales
  */
+
+
 @Entity(name = "Identifier")
 @XmlRootElement(name = "identifier", namespace = "http://entities.domain.xcs.esei.uvigo.es")
 @XmlAccessorType(XmlAccessType.FIELD)
+
 public class Identifier implements Serializable {
-    private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L; 
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -57,24 +58,28 @@ public class Identifier implements Serializable {
      *              Must be non-null, length 1–50.
      * @param value the value of the identifier. 
      *              Must be non-null, length 1–100.
-     */
+     */    
+
     public Identifier(String type, String value) {
-        this.setType(type);
-        this.setValue(value);
+        requireNonNull(type, "type can't be null");
+        inclusiveBetween(1, 50, type.length(), "type must have length between 1 and 50");
+
+        requireNonNull(value, "value can't be null");
+        inclusiveBetween(1, 100, value.length(), "value must have length between 1 and 100");
+
+        this.type = type;
+        this.value = value;
     }
 
-    /**
-     * Creates a new instance of {@code Identifier} for a given pet.
-     * 
-     * @param type  the type of identifier.
-     * @param value the value of the identifier.
-     * @param pet   the pet to which this identifier belongs.
-     */
-    public Identifier(String type, String value, Pet pet) {
-        this(type, value);
-        this.setPet(pet);
+    public static Identifier create(String type, String value, Pet pet) {
+        Identifier identifier = new Identifier(type, value);
+        identifier.setPet(pet);
+        return identifier;
     }
 
+
+
+    // getters y setters
     public int getId() {
         return id;
     }
@@ -114,5 +119,6 @@ public class Identifier implements Serializable {
             this.pet.internalAddIdentifier(this);
         }
     }
+
 }
 

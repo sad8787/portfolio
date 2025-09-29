@@ -1,54 +1,79 @@
 package es.uvigo.esei.xcs.domain.services;
 
+import java.util.List;
+import java.util.Optional;
+
+import javax.annotation.PostConstruct;
+import javax.ejb.Stateless;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.persistence.TypedQuery;
+
 import es.uvigo.esei.xcs.domain.entities.Pet;
 import es.uvigo.esei.xcs.domain.entities.Vet;
 
-import javax.persistence.EntityManager;
-import javax.persistence.TypedQuery;
-import java.util.List;
-
+@Stateless
 public class VetService extends UserService<Vet> {
 
-    public VetService(EntityManager em) {
-        super(em, Vet.class);
+    @PersistenceContext
+    private EntityManager emInjected;
+
+    public VetService() {
+        super(Vet.class);
     }
 
-    /**
-     * Returns the pets attended by a given vet.
-     * @param vet the vet (not null)
-     * @return list of pets attended by the vet
-     */
-    public List<Pet> getPetsAttended(Vet vet) {
-        TypedQuery<Pet> query = em.createQuery(
-                "SELECT p FROM Pet p WHERE p.vet = :vet", Pet.class
-        );
-        query.setParameter("vet", vet);
-        return query.getResultList();
+    @PostConstruct
+    private void init() {
+        super.em = emInjected;
     }
 
-    /**
-     * Finds all vets attending exactly 'count' number of pets.
-     * @param count the number of pets
-     * @return list of vets with exactly 'count' pets
-     */
-    public List<Vet> findByNumberOfPets(int count) {
-        TypedQuery<Vet> query = em.createQuery(
-                "SELECT v FROM Vet v WHERE SIZE(v.pets) = :count", Vet.class
-        );
-        query.setParameter("count", count);
-        return query.getResultList();
+    // === CRUD de Vet ===
+
+    public void createVet(Vet vet) {
+        em.persist(vet);
     }
 
-    /**
-     * Finds all vets attending at least 'minCount' pets.
-     * @param minCount minimum number of pets
-     * @return list of vets with at least 'minCount' pets
-     */
-    public List<Vet> findByMinimumPets(int minCount) {
-        TypedQuery<Vet> query = em.createQuery(
-                "SELECT v FROM Vet v WHERE SIZE(v.pets) >= :minCount", Vet.class
+    public Optional<Vet> findVet(String login) {
+        return Optional.ofNullable(em.find(Vet.class, login));
+    }
+
+    public List<Vet> findAllVets() {
+        TypedQuery<Vet> q = em.createQuery("SELECT v FROM Vet v", Vet.class);
+        return q.getResultList();
+    }
+
+    public void updateVet(Vet vet) {
+        em.merge(vet);
+    }
+
+    public void deleteVet(Vet vet) {
+        if (!em.contains(vet)) vet = em.merge(vet);
+        em.remove(vet);
+    }
+
+    // === Relación muchos a muchos Vet <-> Pet ===
+
+    /** Listar todas las mascotas asociadas a un Vet */
+    public List<Pet> getPets(Vet vet) {
+        TypedQuery<Pet> q = em.createQuery(
+            "SELECT p FROM Pet p JOIN p.vets v WHERE v = :vet", Pet.class
         );
-        query.setParameter("minCount", minCount);
-        return query.getResultList();
+        q.setParameter("vet", vet);
+        return q.getResultList();
+    }
+
+    /** Añadir un Pet a un Vet */
+    public void addPetToVet(Vet vet, Pet pet) {
+        vet.addPet(pet);      // mantiene consistencia bidireccional
+        em.merge(vet);         // sincroniza cambios en la BD
+        em.merge(pet);         // opcional si pet ya estaba persistido
+    }
+
+    /** Eliminar un Pet de un Vet */
+    public void removePetFromVet(Vet vet, Pet pet) {
+        vet.removePet(pet);    // mantiene consistencia bidireccional
+        em.merge(vet);          // sincroniza cambios
+        em.merge(pet);          // opcional si pet ya estaba persistido
     }
 }
+

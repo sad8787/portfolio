@@ -1,18 +1,15 @@
 package es.uvigo.esei.xcs.domain.entities;
 
-import static java.util.Objects.requireNonNull;
 
-import java.io.Serializable;
-import java.util.Collection;
 import java.util.HashSet;
+import static java.util.Objects.requireNonNull;
 import java.util.Set;
 import java.util.stream.Stream;
 
-import javax.persistence.CascadeType;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
-import javax.persistence.OneToMany;
+import javax.persistence.ManyToMany;
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
@@ -23,17 +20,42 @@ import javax.xml.bind.annotation.XmlRootElement;
 @Entity
 @DiscriminatorValue("VET")
 @XmlRootElement(name = "vet", namespace = "http://entities.domain.xcs.esei.uvigo.es")
-public class Vet extends User implements Serializable {
+public class Vet extends User  {
 
     private static final long serialVersionUID = 1L;
 
-    @OneToMany(
-        mappedBy = "vet",
-        cascade = CascadeType.ALL,
-        orphanRemoval = true,
-        fetch = FetchType.EAGER
-    )
-    private Set<Pet> pets = new HashSet<>();
+    @ManyToMany(mappedBy = "vets", fetch = FetchType.EAGER)
+    protected Set<Pet> pets = new HashSet<>();
+    // Getter
+    public Set<Pet> getPets() {
+        return java.util.Collections.unmodifiableSet(pets);
+    }
+
+    // Setter
+    public void setPets(Set<Pet> pets) {
+        this.pets.clear();
+        if (pets != null) {
+            this.pets.addAll(pets);
+        }
+    }
+
+    // Add helper
+    public void addPet(Pet pet) {
+        requireNonNull(pet, "pet can't be null");
+        if (pets.add(pet)) {
+            pet.getVets().add(this); // Mantener bidireccionalidad
+        }
+    }
+
+    // Remove helper
+    public void removePet(Pet pet) {
+        requireNonNull(pet, "pet can't be null");
+        if (pets.remove(pet)) {
+            pet.getVets().remove(this); // Mantener bidireccionalidad
+        }
+    }
+
+    
 
     // Required for JPA
     protected Vet() {
@@ -56,40 +78,18 @@ public class Vet extends User implements Serializable {
     }
 
     /** Returns an unmodifiable collection of pets attended by this vet */
-    public Collection<Pet> getPets() {
-        return java.util.Collections.unmodifiableCollection(pets);
-    }
+   
 
-    /** Adds a pet to this vet */
-    public void addPet(Pet pet) {
-        requireNonNull(pet, "pet can't be null");
-
-        if (!pets.contains(pet)) {
-            pets.add(pet);
-            pet.setVet(this);
-        }
-    }
-
-    /** Removes a pet from this vet */
-    public void removePet(Pet pet) {
-        requireNonNull(pet, "pet can't be null");
-
-        if (pets.contains(pet)) {
-            pets.remove(pet);
-            pet.setVet(null);
-        } else {
-            throw new IllegalArgumentException("pet doesn't belong to this vet");
-        }
-    }
+    
 
     /** Internal helper to add a pet directly to the collection (no bidirectional update) */
-    void internalAddPet(Pet pet) {
+    public void internalAddPet(Pet pet) {
         requireNonNull(pet, "pet can't be null");
         pets.add(pet);
     }
 
     /** Internal helper to remove a pet directly from the collection (no bidirectional update) */
-    void internalRemovePet(Pet pet) {
+    public void internalRemovePet(Pet pet) {
         requireNonNull(pet, "pet can't be null");
         pets.remove(pet);
     }

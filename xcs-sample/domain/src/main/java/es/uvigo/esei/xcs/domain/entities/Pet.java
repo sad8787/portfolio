@@ -1,17 +1,35 @@
 package es.uvigo.esei.xcs.domain.entities;
-
-import static java.util.Objects.requireNonNull;
-import static org.apache.commons.lang3.Validate.inclusiveBetween;
-import static java.util.Collections.unmodifiableCollection;
-import static java.util.Collections.unmodifiableSet;
-
 import java.io.Serializable;
+import java.util.Collection;
+import java.util.Collections;
+import static java.util.Collections.unmodifiableCollection;
 import java.util.Date;
 import java.util.HashSet;
+import static java.util.Objects.requireNonNull;
 import java.util.Set;
-import java.util.Collection;
 
-import javax.persistence.*;
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
+
+import static org.apache.commons.lang3.Validate.inclusiveBetween;
 
 /**
  * A pet.
@@ -44,16 +62,19 @@ public class Pet implements Serializable {
     @XmlTransient
     private Owner owner;
 
-    @ManyToOne
-    @JoinColumn(name = "vet", referencedColumnName = "login", nullable = true)
+    @ManyToMany
+    @JoinTable(
+    name = "pet_vet",
+    joinColumns = @JoinColumn(name = "pet_id", referencedColumnName = "id"),
+    inverseJoinColumns = @JoinColumn(name = "vet_login", referencedColumnName = "login")
+    )
     @XmlTransient
-    private Vet vet;
+    protected  Set<Vet> vets = new HashSet<>();
 
     @OneToMany(mappedBy = "pet", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
-    private Set<Identifier> identifiers = new HashSet<>();
+    protected Set<Identifier> identifiers = new HashSet<>();
 
-    @OneToMany(mappedBy = "pet", cascade = CascadeType.ALL, orphanRemoval = true)
-    private Set<PetVaccine> petVaccines = new HashSet<>();
+    
 
     // Required for JPA
     protected Pet() {}
@@ -101,19 +122,41 @@ public class Pet implements Serializable {
         inclusiveBetween(new Date(0), new Date(), birth, "birth must be previous to the current time");
         this.birth = birth;
     }
-
+    //ownwr
     public Owner getOwner() { return owner; }
     public void setOwner(Owner owner) {
         if (this.owner != null) this.owner.internalRemovePet(this);
         this.owner = owner;
         if (this.owner != null) this.owner.internalAddPet(this);
     }
+    
+    
+    
+    //vet
+        // Getter
+    public Set<Vet> getVets() {
+        return Collections.unmodifiableSet(vets);
+    }
 
-    public Vet getVet() { return vet; }
-    public void setVet(Vet vet) {
-        if (this.vet != null) this.vet.internalRemovePet(this);
-        this.vet = vet;
-        if (this.vet != null) this.vet.internalAddPet(this);
+    // Setter (reemplaza la colección completa)
+    public void setVets(Set<Vet> vets) {
+        this.vets.clear();
+        if (vets != null) {
+            this.vets.addAll(vets);
+        }
+    }
+
+    // Métodos auxiliares para mantener consistencia
+    public void addVet(Vet vet) {
+        requireNonNull(vet, "vet can't be null");
+        this.vets.add(vet);
+        vet.getPets().add(this);
+    }
+
+    public void removeVet(Vet vet) {
+        requireNonNull(vet, "vet can't be null");
+        this.vets.remove(vet);
+        vet.getPets().remove(this);
     }
 
     // Identifiers
@@ -130,17 +173,33 @@ public class Pet implements Serializable {
     }
 
     // PetVaccine
+    @OneToMany(mappedBy = "pet", cascade = CascadeType.ALL, orphanRemoval = true)
+    private final Set<PetVaccine> petVaccines = new HashSet<>();
+
+
+    // Getter público
     public Set<PetVaccine> getPetVaccines() {
-        return unmodifiableSet(petVaccines);
+        return Collections.unmodifiableSet(petVaccines);
     }
-    void internalAddPetVaccine(PetVaccine petVaccine) {
-        requireNonNull(petVaccine, "petVaccine can't be null");
-        this.petVaccines.add(petVaccine);
+
+    // Métodos internos para mantener consistencia bidireccional
+    public void internalAddPetVaccine(PetVaccine pv) {
+        requireNonNull(pv, "petVaccine can't be null");
+        this.petVaccines.add(pv);
+        if (pv.getPet() != this) {
+            pv.setPet(this);
+        }
     }
-    void internalRemovePetVaccine(PetVaccine petVaccine) {
-        requireNonNull(petVaccine, "petVaccine can't be null");
-        this.petVaccines.remove(petVaccine);
+
+    public void internalRemovePetVaccine(PetVaccine pv) {
+        requireNonNull(pv, "petVaccine can't be null");
+        this.petVaccines.remove(pv);
+        if (pv.getPet() == this) {
+            pv.setPet(null);
+        }
     }
+
+
 }
 
 

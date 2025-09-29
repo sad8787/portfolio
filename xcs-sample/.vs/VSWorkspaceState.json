@@ -1,0 +1,17 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\domain",
+    "\\domain\\src",
+    "\\domain\\src\\main",
+    "\\domain\\src\\main\\java",
+    "\\domain\\src\\main\\java\\es",
+    "\\domain\\src\\main\\java\\es\\uvigo",
+    "\\domain\\src\\main\\java\\es\\uvigo\\esei",
+    "\\domain\\src\\main\\java\\es\\uvigo\\esei\\xcs",
+    "\\domain\\src\\main\\java\\es\\uvigo\\esei\\xcs\\domain",
+    "\\domain\\src\\main\\java\\es\\uvigo\\esei\\xcs\\domain\\entities"
+  ],
+  "SelectedNode": "\\domain\\src\\main\\java\\es\\uvigo\\esei\\xcs\\domain\\entities\\Pet.java",
+  "PreviewInSolutionExplorer": false
+}

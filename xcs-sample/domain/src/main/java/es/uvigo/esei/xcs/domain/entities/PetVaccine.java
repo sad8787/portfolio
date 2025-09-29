@@ -1,9 +1,8 @@
 package es.uvigo.esei.xcs.domain.entities;
 
-import static java.util.Objects.requireNonNull;
-
 import java.io.Serializable;
 import java.util.Date;
+import static java.util.Objects.requireNonNull;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -13,6 +12,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.xml.bind.annotation.XmlAccessType;
@@ -20,13 +20,6 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
 
-/**
- * Represents the application of a vaccine to a pet.
- * 
- * Includes the date when the vaccine was applied.
- * 
- * @author ...
- */
 @Entity(name = "PetVaccine")
 @Table(name = "PET_VACCINE")
 @XmlRootElement(name = "petVaccine", namespace = "http://entities.domain.xcs.esei.uvigo.es")
@@ -51,51 +44,54 @@ public class PetVaccine implements Serializable {
     @Temporal(TemporalType.DATE)
     private Date date;
 
-    // Required for JPA
     protected PetVaccine() {}
 
-    /**
-     * Creates a new instance of {@code PetVaccine}.
-     * 
-     * @param pet the pet that receives the vaccine (not null).
-     * @param vaccine the vaccine applied (not null).
-     * @param date the application date (not null).
-     */
     public PetVaccine(Pet pet, Vaccine vaccine, Date date) {
-        this.setPet(pet);
-        this.setVaccine(vaccine);
-        this.setDate(date);
+        requireNonNull(pet, "pet can't be null");
+        requireNonNull(vaccine, "vaccine can't be null");
+        requireNonNull(date, "date can't be null");
+
+        this.pet = pet;
+        this.vaccine = vaccine;
+        this.date = date;
+        
+        pet.internalAddPetVaccine(this);
+        vaccine.internalAddPetVaccine(this);
     }
 
-    public int getId() {
-        return id;
-    }
 
-    public Pet getPet() {
-        return pet;
-    }
 
+    public int getId() { return id; }
+
+    public Pet getPet() { return pet; }
     public void setPet(Pet pet) {
         requireNonNull(pet, "pet can't be null");
         this.pet = pet;
     }
 
-    public Vaccine getVaccine() {
-        return vaccine;
-    }
-
+    public Vaccine getVaccine() { return vaccine; }
     public void setVaccine(Vaccine vaccine) {
         requireNonNull(vaccine, "vaccine can't be null");
         this.vaccine = vaccine;
     }
 
-    public Date getDate() {
-        return date;
-    }
-
+    public Date getDate() { return date; }
     public void setDate(Date date) {
         requireNonNull(date, "date can't be null");
         this.date = date;
     }
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof PetVaccine)) return false;
+        PetVaccine that = (PetVaccine) o;
+        return id != 0 && id == that.id;
+    }
+
+    @Override
+    public int hashCode() {
+        return Integer.hashCode(id);
+    }
+
 }
 
