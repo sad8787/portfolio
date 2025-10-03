@@ -19,17 +19,14 @@ import static org.apache.commons.lang3.Validate.inclusiveBetween;
 
 /**
  * An identifier for a pet.
- * Each identifier has a type (e.g., microchip, tattoo, passport) 
- * and a value.
+ * Each identifier has a type (e.g., microchip, tattoo, passport)
+ * and a unique value.
  * 
  * @author Sadiel Godales
  */
-
-
 @Entity(name = "Identifier")
 @XmlRootElement(name = "identifier", namespace = "http://entities.domain.xcs.esei.uvigo.es")
 @XmlAccessorType(XmlAccessType.FIELD)
-
 public class Identifier implements Serializable {
     private static final long serialVersionUID = 1L; 
 
@@ -48,38 +45,36 @@ public class Identifier implements Serializable {
     @XmlTransient
     private Pet pet;
 
-    // Required for JPA
+    // Required by JPA
     protected Identifier() {}
 
     /**
-     * Creates a new instance of {@code Identifier} without a pet.
-     * 
-     * @param type  the type of identifier (e.g., microchip). 
-     *              Must be non-null, length 1–50.
-     * @param value the value of the identifier. 
-     *              Must be non-null, length 1–100.
-     */    
-
+     * Creates a new Identifier without assigning a Pet.
+     *
+     * @param type  the type of identifier (1–50 characters)
+     * @param value the unique identifier value (1–100 characters)
+     */
     public Identifier(String type, String value) {
-        requireNonNull(type, "type can't be null");
-        inclusiveBetween(1, 50, type.length(), "type must have length between 1 and 50");
-
-        requireNonNull(value, "value can't be null");
-        inclusiveBetween(1, 100, value.length(), "value must have length between 1 and 100");
-
+        requireNonNull(type, "Identifier type cannot be null");
+        inclusiveBetween(1, 50, type.length(), "Type must have length between 1 and 50");
         this.type = type;
+
+        requireNonNull(value, "Identifier value cannot be null");
+        inclusiveBetween(1, 100, value.length(), "Value must have length between 1 and 100");
         this.value = value;
     }
 
+
+    /**
+     * Factory method to create and link an Identifier with a Pet.
+     */
     public static Identifier create(String type, String value, Pet pet) {
         Identifier identifier = new Identifier(type, value);
         identifier.setPet(pet);
         return identifier;
     }
 
-
-
-    // getters y setters
+    // Getters & Setters
     public int getId() {
         return id;
     }
@@ -89,8 +84,8 @@ public class Identifier implements Serializable {
     }
 
     public void setType(String type) {
-        requireNonNull(type, "type can't be null");
-        inclusiveBetween(1, 50, type.length(), "type must have length between 1 and 50");
+        requireNonNull(type, "Identifier type cannot be null");
+        inclusiveBetween(1, 50, type.length(), "Type must have length between 1 and 50");
         this.type = type;
     }
 
@@ -99,8 +94,8 @@ public class Identifier implements Serializable {
     }
 
     public void setValue(String value) {
-        requireNonNull(value, "value can't be null");
-        inclusiveBetween(1, 100, value.length(), "value must have length between 1 and 100");
+        requireNonNull(value, "Identifier value cannot be null");
+        inclusiveBetween(1, 100, value.length(), "Value must have length between 1 and 100");
         this.value = value;
     }
 
@@ -120,5 +115,19 @@ public class Identifier implements Serializable {
         }
     }
 
+    // Equality based on unique value
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Identifier)) return false;
+        Identifier that = (Identifier) o;
+        return value.equals(that.value);
+    }
+
+    @Override
+    public int hashCode() {
+        return value.hashCode();
+    }
 }
+
 

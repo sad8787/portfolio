@@ -88,16 +88,16 @@ public class Pet implements Serializable {
         this(name, animal, birth, owner, null);
     }
 
-    public Pet(String name, AnimalType animal, Date birth, Vet vet) {
-        this(name, animal, birth, null, vet);
+    public Pet(String name, AnimalType animal, Date birth, Set<Vet> vets) {
+        this(name, animal, birth, null, vets);
     }
 
-    public Pet(String name, AnimalType animal, Date birth, Owner owner, Vet vet) {
+    public Pet(String name, AnimalType animal, Date birth, Owner owner, Set<Vet> vets) {
         this.setName(name);
         this.setAnimal(animal);
         this.setBirth(birth);
         this.setOwner(owner);
-        this.setVet(vet);
+        this.setVets(vets);
     }
 
     // Getters & Setters
@@ -163,11 +163,11 @@ public class Pet implements Serializable {
     public Collection<Identifier> getIdentifiers() {
         return unmodifiableCollection(identifiers);
     }
-    void internalAddIdentifier(Identifier identifier) {
+    public void internalAddIdentifier(Identifier identifier) {
         requireNonNull(identifier, "identifier can't be null");
         this.identifiers.add(identifier);
     }
-    void internalRemoveIdentifier(Identifier identifier) {
+    public void internalRemoveIdentifier(Identifier identifier) {
         requireNonNull(identifier, "identifier can't be null");
         this.identifiers.remove(identifier);
     }
