@@ -17,6 +17,8 @@ public class VetService extends UserService<Vet> {
 
     @PersistenceContext
     private EntityManager emInjected;
+    
+
 
     public VetService() {
         super(Vet.class);
@@ -74,6 +76,19 @@ public class VetService extends UserService<Vet> {
         vet.removePet(pet);    // mantiene consistencia bidireccional
         em.merge(vet);          // sincroniza cambios
         em.merge(pet);          // opcional si pet ya estaba persistido
+    }
+
+    private boolean canModifyVet(Vet vet) {
+        // ADMIN puede modificar cualquier VET
+        if (securityContext.isUserInRole("ADMIN")) return true;
+
+        // VET puede modificar solo sus propios pets
+        if (securityContext.isUserInRole("VET")
+            && securityContext.getUserPrincipal().getName().equals(vet.getLogin())) {
+            return true;
+        }
+
+        return false;
     }
 }
 

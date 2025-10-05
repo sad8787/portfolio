@@ -6,8 +6,6 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  * An administrator of the application.
- * 
- * @author 
  */
 @Entity
 @DiscriminatorValue("ADMIN")
@@ -17,21 +15,19 @@ public class Administrator extends User {
 
     // Required by JPA
     protected Administrator() {
-        super("dummy", "dummy123"); // valores por defecto para JPA
+        super("dummy@example.com", "dummy123"); // email válido para pasar validación
     }
 
     /**
      * Creates a new instance of {@code Administrator}.
-     * 
-     * @param login the login that identifies the user. Must be non-null, non-empty, max length 100.
-     * @param password the raw password of the user. Must be non-null, min length 6.
-     * 
-     * @throws NullPointerException if {@code null} is passed.
-     * @throws IllegalArgumentException if constraints are not met.
+     *
+     * @param login the login (must be a valid email)
+     * @param password the raw password (min length 6)
      */
     public Administrator(String login, String password) {
         super(login, password);
-        // No need to set role manually: handled by @DiscriminatorValue("ADMIN")
+        // role handled automatically by @DiscriminatorValue("ADMIN")
     }
 }
+
 

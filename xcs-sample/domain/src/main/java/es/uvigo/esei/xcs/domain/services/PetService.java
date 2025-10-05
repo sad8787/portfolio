@@ -8,17 +8,24 @@ import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
+import javax.ws.rs.WebApplicationException;
+import javax.ws.rs.core.Context;
+import javax.ws.rs.core.Response;
+import javax.ws.rs.core.SecurityContext;
 
 import es.uvigo.esei.xcs.domain.entities.Pet;
 import es.uvigo.esei.xcs.domain.entities.PetVaccine;
 import es.uvigo.esei.xcs.domain.entities.Vaccine;
 import es.uvigo.esei.xcs.domain.entities.Vet;
 
+
 @Stateless
 public class PetService {
 
     @PersistenceContext
     private EntityManager em;
+    @Context
+    private SecurityContext securityContext;
 
     // === CRUD de Pet ===
 
@@ -35,13 +42,31 @@ public class PetService {
         return q.getResultList();
     }
 
-    public void updatePet(Pet pet) {
+    public void updatePet(Pet pet) {        
+
+        Pet existing = em.find(Pet.class, pet.getId());
+        if (existing == null) {
+            throw new WebApplicationException("Pet no encontrada", Response.Status.NOT_FOUND);
+        }
+        if (!canModifyPet(existing)) {
+            throw new WebApplicationException("No tienes permisos para modificar esta mascota", Response.Status.FORBIDDEN);
+        }
         em.merge(pet);
+        
     }
 
     public void deletePet(Pet pet) {
-        if (!em.contains(pet)) pet = em.merge(pet);
-        em.remove(pet);
+        Pet existing = em.find(Pet.class, pet.getId());
+        if (existing == null) {
+            throw new WebApplicationException("Pet no encontrada", Response.Status.NOT_FOUND);
+        }
+
+        if (!canModifyPet(existing)) {
+            throw new WebApplicationException("No tienes permisos para eliminar esta mascota", Response.Status.FORBIDDEN);
+        }
+
+        if (!em.contains(existing)) existing = em.merge(existing);
+        em.remove(existing);
     }
 
     // === Relación Pet ↔ Vet (muchos a muchos) ===
@@ -97,9 +122,28 @@ public class PetService {
             if (!em.contains(pv)) pv = em.merge(pv);
             em.remove(pv);
         }
-
         em.merge(pet);
         em.merge(vaccine);
     }
+
+
+    private boolean canModifyPet(Pet pet) {
+        String currentUser = securityContext.getUserPrincipal().getName();
+        boolean isAdmin = securityContext.isUserInRole("ADMIN");
+        boolean isVet = securityContext.isUserInRole("VET");
+        boolean isOwner = securityContext.isUserInRole("OWNER");
+        if (isAdmin) return true; // Admin puede modificar cualquier pet
+        // El owner puede modificar su propia pet
+        if (isOwner && pet.getOwner() != null && currentUser.equals(pet.getOwner().getLogin())) {
+            return true;
+        }
+        // Un vet puede modificar las pets que atiende
+        if (isVet && pet.getVets().stream().anyMatch(v -> v.getLogin().equals(currentUser))) {
+            return true;
+        }
+        return false;
+    }
+
+
 }
 

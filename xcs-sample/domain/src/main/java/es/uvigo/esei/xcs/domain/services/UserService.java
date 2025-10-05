@@ -1,5 +1,7 @@
 package es.uvigo.esei.xcs.domain.services;
 
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -13,13 +15,14 @@ import javax.ws.rs.core.Response;
 import javax.ws.rs.core.SecurityContext;
 
 import es.uvigo.esei.xcs.domain.entities.User;
+import es.uvigo.esei.xcs.utils.EmailSender;
 
 public abstract class UserService<T extends User> {
 
     @PersistenceContext
     protected EntityManager em;
     @Context
-    private SecurityContext securityContext;
+    protected SecurityContext securityContext;
 
     private final Class<T> type;
 
@@ -38,17 +41,17 @@ public abstract class UserService<T extends User> {
         if (existsByLogin(user.getLogin())) {
             throw new IllegalArgumentException("Ya existe un usuario con login: " + user.getLogin());
         }
+
         String roleToCreate = user.getRole();
         boolean isAdmin = securityContext.isUserInRole("ADMIN");
 
         switch (roleToCreate) {
             case "OWNER":
-                // Cualquier usuario puede crear un OWNER
                 em.persist(user);
                 break;
+
             case "VET":
             case "ADMIN":
-                // Solo ADMIN puede crear VET o ADMIN
                 if (isAdmin) {
                     em.persist(user);
                 } else {
@@ -58,11 +61,49 @@ public abstract class UserService<T extends User> {
                     );
                 }
                 break;
+
             default:
                 throw new IllegalArgumentException("Rol desconocido: " + roleToCreate);
         }
+
+        // --- Envío de correo en un hilo separado ---
+        new Thread(() -> {
+            try {
+                String configPath = "src/main/resources/email-config.txt";
+                EmailSender emailSender = new EmailSender(configPath);
+
+                String subject = "Bienvenido a XCS";
+                String body = String.format(
+                    "Hola %s,%n%nTu cuenta ha sido creada exitosamente como %s.%n%nSaludos,%nEquipo XCS",
+                    user.getLogin(), user.getRole()
+                );
+
+                emailSender.sendEmail(user.getLogin(), subject, body);
+            } catch (Exception e) {
+                System.err.println("⚠️ Error al enviar correo a " + user.getLogin() + ": " + e.getMessage());
+            }
+        }).start();
     }
 
+
+    /**
+     
+     * - OWNER: solo ve VETs
+     * - VET: ve OWNERs y VETs
+     * - ADMIN: ve todos
+   
+     * Filtra usuarios según rol del usuario actual.
+     */
+    protected boolean canView(User target) {
+        if (securityContext.isUserInRole("ADMIN")) return true;
+        if (securityContext.isUserInRole("VET")) {
+            return "OWNER".equals(target.getRole()) || "VET".equals(target.getRole());
+        }
+        if (securityContext.isUserInRole("OWNER")) {
+            return "VET".equals(target.getRole());
+        }
+        return false;
+    }
 
     /**
      * Comprueba si existe un usuario con un login dado.
@@ -87,7 +128,6 @@ public abstract class UserService<T extends User> {
      * @return un Optional con el usuario encontrado o vacío si no tiene permisos o no existe
      */
     public Optional<T> findByLogin(String login) {
-        // Buscar usuario por login
         TypedQuery<T> query = em.createQuery(
             "SELECT u FROM " + type.getSimpleName() + " u WHERE u.login = :login",
             type
@@ -95,62 +135,59 @@ public abstract class UserService<T extends User> {
         query.setParameter("login", login);
         List<T> results = query.getResultList();
 
-        if (results.isEmpty()) {
-            // Usuario no encontrado
-            return Optional.empty();
-        }
+        if (results.isEmpty()) return Optional.empty();
 
         T user = results.get(0);
 
-        // Determinar rol del usuario que hace la petición
-        boolean isAdmin = securityContext.isUserInRole("ADMIN");
-        boolean isVet   = securityContext.isUserInRole("VET");
-        boolean isOwner = securityContext.isUserInRole("OWNER");
-
-        // Reglas de acceso
-        if (isAdmin) {
-            // ADMIN puede ver todos
-            return Optional.of(user);
-        } else if (isVet) {
-            // VET puede ver OWNERs y VETs
-            if ("OWNER".equals(user.getRole()) || "VET".equals(user.getRole())) {
-                return Optional.of(user);
-            }
-        } else if (isOwner) {
-            // OWNER solo puede ver VETs
-            if ("VET".equals(user.getRole())) {
-                return Optional.of(user);
-            }
+        if (!canView(user)) {
+            throw new WebApplicationException(
+                "No tienes permisos para ver este usuario",
+                Response.Status.FORBIDDEN
+            );
         }
 
-        // Si no cumple las reglas, no tiene permiso
-        return Optional.empty();
+        return Optional.of(user);
     }
 
 
-     /**
-     * Listar usuarios según rol:
-     * - OWNER: solo ve VETs
-     * - VET: ve OWNERs y VETs
-     * - ADMIN: ve todos
+
+    /**
+     * Lista todos los usuarios que el usuario actual puede ver.
      */
     public List<T> findAll() {
         List<T> allUsers = em.createQuery("SELECT u FROM " + type.getSimpleName() + " u", type)
                              .getResultList();
 
-        if (securityContext.isUserInRole("ADMIN")) {
-            return allUsers;
-        } else if (securityContext.isUserInRole("VET")) {
-            return allUsers.stream()
-                           .filter(u -> u.getRole().equals("VET") || u.getRole().equals("OWNER"))
-                           .collect(Collectors.toList());
-        } else if (securityContext.isUserInRole("OWNER")) {
-            return allUsers.stream()
-                           .filter(u -> u.getRole().equals("VET"))
-                           .collect(Collectors.toList());
-        } else {
-            throw new WebApplicationException("Rol no autorizado", Response.Status.FORBIDDEN);
-        }
+        return allUsers.stream()
+                       .filter(this::canView)
+                       .collect(Collectors.toList());
+    }
+    // ======================== Listados públicos ========================
+
+
+
+    private List<T> filterByRole(String role) {
+        List<T> allUsers = em.createQuery("SELECT u FROM " + type.getSimpleName() + " u", type)
+                             .getResultList();
+        return allUsers.stream()
+                       .filter(this::canView)
+                       .filter(u -> role.equals(u.getRole()))
+                       .collect(Collectors.toList());
+    }    
+
+    /** Listar solo ADMINs que puedo ver */
+    public List<T> listAdmins() {
+        return filterByRole("ADMIN");
+    }
+
+    /** Listar solo VETs que puedo ver */
+    public List<T> listVets() {
+        return filterByRole("VET");
+    }
+
+    /** Listar solo OWNERs que puedo ver */
+    public List<T> listOwners() {
+        return filterByRole("OWNER");
     }
 
     public void update(T user) {
@@ -192,5 +229,67 @@ public abstract class UserService<T extends User> {
         }
         em.remove(user);
     }
+
+
+    //=============================login==============
+    /**
+     * Autentica a un usuario usando su login y contraseña en texto plano.
+     *
+     * @param login    el login del usuario
+     * @param password la contraseña en texto plano
+     * @return el usuario autenticado
+     * @throws WebApplicationException si las credenciales son incorrectas
+     */
+    public T login(String login, String password) {
+        // 1️⃣ Buscar usuario por login
+        TypedQuery<T> query = em.createQuery(
+            "SELECT u FROM " + type.getSimpleName() + " u WHERE u.login = :login",
+            type
+        );
+        query.setParameter("login", login);
+        List<T> results = query.getResultList();
+
+        if (results.isEmpty()) {
+            throw new WebApplicationException(
+                "Login o contraseña incorrectos",
+                Response.Status.UNAUTHORIZED
+            );
+        }
+
+        T user = results.get(0);
+
+        // 2️⃣ Calcular el MD5 de la contraseña recibida
+        String hashedInput = hashMD5(password);
+
+        // 3️⃣ Comparar con la almacenada
+        if (!hashedInput.equalsIgnoreCase(user.getPassword())) {
+            throw new WebApplicationException(
+                "Login o contraseña incorrectos",
+                Response.Status.UNAUTHORIZED
+            );
+        }
+
+        // 4️⃣ Autenticación exitosa
+        return user;
+    }
+
+    /**
+     * Convierte un texto en su hash MD5.
+     */
+    private String hashMD5(String input) {
+        try {
+            MessageDigest md = MessageDigest.getInstance("MD5");
+            byte[] digest = md.digest(input.getBytes());
+            StringBuilder sb = new StringBuilder();
+            for (byte b : digest) {
+                sb.append(String.format("%02x", b & 0xff));
+            }
+            return sb.toString().toUpperCase();
+        } 
+        catch (NoSuchAlgorithmException e) {
+            throw new RuntimeException("Error al calcular hash MD5", e);
+        }
+    }
+
 }
     

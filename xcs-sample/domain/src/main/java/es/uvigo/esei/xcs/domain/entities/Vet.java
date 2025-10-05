@@ -59,7 +59,7 @@ public class Vet extends User  {
 
     // Required for JPA
     protected Vet() {
-        super("dummy", "dummy123"); // constructor JPA, valores dummy
+        super("vet@example.com", "dummy123");; // constructor JPA, valores dummy
     }
 
     /** 

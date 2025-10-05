@@ -14,7 +14,7 @@ def guardar_estructura(directorio, archivo_salida):
 
 
 if __name__ == "__main__":
-    directorio = "C://portfolio//portfolio//xcs-sample"   # Cambia por el nombre de tu carpeta
+    directorio = "C://portfolio//portfolio//xcs-sample//domain//src//main"   # Cambia por el nombre de tu carpeta
     archivo_salida = "C://portfolio//portfolio//xcs-sample//estructura.txt"
     guardar_estructura(directorio, archivo_salida)
     print(f"Estructura guardada en {archivo_salida}")
